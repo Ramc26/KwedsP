@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kwedsp.rambuilds.in/sitemap.xml
