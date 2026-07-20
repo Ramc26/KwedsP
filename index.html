@@ -12,27 +12,29 @@
   <meta name="apple-mobile-web-app-title" content="K♥P">
   <meta name="application-name" content="K♥P">
 
-  <link rel="canonical" id="canonicalUrl" href="https://kwedsp.rambuilds.in/">
+  <link rel="canonical" id="canonicalUrl" href="https://kwedsp.vercel.app/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="/preview.png">
+  <link rel="apple-touch-icon" href="/og-preview.jpg">
 
-  <!-- Open Graph / Facebook / WhatsApp -->
+  <!-- Open Graph / Facebook / WhatsApp (must match live host + image under ~300KB) -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Kamesh & Prasanna Wedding">
   <meta property="og:locale" content="en_IN">
-  <meta property="og:url" content="https://kwedsp.rambuilds.in/">
+  <meta property="og:url" content="https://kwedsp.vercel.app/">
   <meta property="og:title" content="Kamesh & Prasanna — Sri Rama Kalyana Vaibhavam">
   <meta property="og:description" content="You're invited to our Telugu Hindu wedding · 30 August 2026 · Muhurtham 11:29 AM · Seethanagaram & Neeladriraopeta, Andhra Pradesh.">
-  <meta property="og:image" content="https://kwedsp.rambuilds.in/preview.png">
+  <meta property="og:image" content="https://kwedsp.vercel.app/og-preview.jpg">
+  <meta property="og:image:secure_url" content="https://kwedsp.vercel.app/og-preview.jpg">
+  <meta property="og:image:type" content="image/jpeg">
   <meta property="og:image:alt" content="Kamesh & Prasanna wedding invitation collage">
-  <meta property="og:image:width" content="1536">
-  <meta property="og:image:height" content="1024">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="800">
 
   <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Kamesh & Prasanna — Sri Rama Kalyana Vaibhavam">
   <meta name="twitter:description" content="You're invited to our Telugu Hindu wedding · 30 August 2026 · Muhurtham 11:29 AM · Seethanagaram & Neeladriraopeta, Andhra Pradesh.">
-  <meta name="twitter:image" content="https://kwedsp.rambuilds.in/preview.png">
+  <meta name="twitter:image" content="https://kwedsp.vercel.app/og-preview.jpg">
   <meta name="twitter:image:alt" content="Kamesh & Prasanna wedding invitation collage">
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
@@ -132,7 +134,7 @@
         <h2>Bride & Groom</h2>
       </header>
       <div class="couple-stack">
-        <article class="person person-groom reveal focus-animate">
+        <article class="person person-groom reveal">
           <div class="person-frame">
             <div class="person-glow" aria-hidden="true"></div>
             <div class="person-photo" id="groomPhoto"></div>
@@ -149,7 +151,7 @@
             <p class="person-family" data-field="groom.family"></p>
           </div>
         </article>
-        <article class="person person-bride reveal focus-animate">
+        <article class="person person-bride reveal">
           <div class="person-frame">
             <div class="person-glow" aria-hidden="true"></div>
             <div class="person-photo" id="bridePhoto"></div>
@@ -194,7 +196,7 @@
           <p class="venues-panel-lead">Wedding ceremony and reception at the locations below</p>
         </header>
 
-        <article class="venue-card focus-animate">
+        <article class="venue-card reveal">
           <div class="venue-card-banner">
             <div class="venue-card-photo" id="venuePhoto" role="img" aria-label="Wedding venue"></div>
             <span class="venue-card-tag" data-field="venue.label"></span>
@@ -227,7 +229,7 @@
           </div>
         </article>
 
-        <article class="venue-card venue-card--reception focus-animate">
+        <article class="venue-card venue-card--reception reveal">
           <div class="venue-card-banner venue-card-banner--plain">
             <span class="venue-card-icon" aria-hidden="true"><i class="bi bi-stars"></i></span>
             <span class="venue-card-tag" data-field="receptionVenue.label"></span>
@@ -296,7 +298,7 @@
         <h2>Invitation from Our Families</h2>
       </header>
       <div class="family-grid" id="familyGrid"></div>
-      <div class="gratitude reveal focus-animate">
+      <div class="gratitude reveal">
         <p id="inviteP1"></p>
         <p id="inviteP2"></p>
       </div>

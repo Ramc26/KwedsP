@@ -851,7 +851,7 @@ body:not(.has-blessings) .site-nav {
 }
 
 .section-focus.is-outview {
-  opacity: 0.88;
+  opacity: 1;
 }
 
 .section-focus.is-inview {
@@ -859,26 +859,22 @@ body:not(.has-blessings) .site-nav {
 }
 
 .section-focus .focus-animate {
-  opacity: 0;
-  transform: translateY(22px);
-  filter: blur(3px);
+  opacity: 0.72;
+  transform: translateY(18px);
   transition:
     opacity 0.55s var(--ease),
-    transform 0.6s var(--ease),
-    filter 0.55s ease;
+    transform 0.6s var(--ease);
   transition-delay: calc(var(--focus-i, 0) * 75ms);
 }
 
 .section-focus.is-inview .focus-animate {
   opacity: 1;
   transform: none;
-  filter: none;
 }
 
 .section-focus.is-outview .focus-animate {
-  opacity: 0.4;
-  transform: translateY(14px) scale(0.98);
-  filter: blur(1px);
+  opacity: 0.65;
+  transform: translateY(10px);
 }
 
 .section-focus.is-inview .section-head h2 {
@@ -1569,25 +1565,21 @@ body:not(.has-blessings) .site-nav {
 /* —— Reveal items —— */
 .reveal {
   opacity: 0;
-  transform: translateY(28px) scale(0.97);
-  filter: blur(2px);
+  transform: translateY(22px) scale(0.98);
   transition:
-    opacity 0.7s var(--ease),
-    transform 0.75s var(--ease),
-    filter 0.7s ease;
+    opacity 0.65s var(--ease),
+    transform 0.7s var(--ease);
   transition-delay: var(--delay, 0ms);
 }
 
 .reveal.is-visible {
   opacity: 1;
   transform: none;
-  filter: none;
 }
 
 .reveal.is-away {
-  opacity: 0.45;
-  transform: translateY(10px);
-  filter: none;
+  opacity: 0.82;
+  transform: translateY(8px);
 }
 
 .section-head.reveal.is-visible h2 {

@@ -1,10 +1,10 @@
 window.WEDDING_DATA = {
-  "siteUrl": "https://kwedsp.rambuilds.in",
+  "siteUrl": "https://kwedsp.vercel.app",
   "meta": {
     "tabTitle": "K♥P",
     "shareHeadline": "Kamesh & Prasanna — Sri Rama Kalyana Vaibhavam",
     "tagline": "You're invited to our Telugu Hindu wedding · 30 August 2026 · Muhurtham 11:29 AM · Seethanagaram & Neeladriraopeta, Andhra Pradesh.",
-    "shareImage": "preview.png",
+    "shareImage": "og-preview.jpg",
     "siteName": "Kamesh & Prasanna Wedding",
     "locale": "en_IN",
     "themeColor": "#6b1d2a"

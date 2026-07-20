@@ -36,7 +36,7 @@ $(function () {
     var tabTitle = m.tabTitle || "K♥P";
     var headline = m.shareHeadline || d.title || tabTitle;
     var tagline = m.tagline || d.description || "";
-    var imgPath = m.shareImage || "preview.png";
+    var imgPath = m.shareImage || "og-preview.jpg";
     var imgUrl = /^https?:\/\//i.test(imgPath)
       ? imgPath
       : site + "/" + String(imgPath).replace(/^\//, "");
@@ -58,12 +58,12 @@ $(function () {
     $('meta[property="og:title"]').attr("content", headline);
     $('meta[property="og:description"]').attr("content", tagline);
     $('meta[property="og:image"]').attr("content", imgUrl);
+    $('meta[property="og:image:secure_url"]').attr("content", imgUrl);
     $('meta[property="og:image:alt"]').attr(
       "content",
       (d.groom && d.bride ? d.groom.displayName + " & " + d.bride.displayName : "Wedding") +
-        " invitation"
+        " invitation collage"
     );
-
     $('meta[name="twitter:title"]').attr("content", headline);
     $('meta[name="twitter:description"]').attr("content", tagline);
     $('meta[name="twitter:image"]').attr("content", imgUrl);
@@ -173,7 +173,7 @@ $(function () {
             '" target="_blank" rel="noopener noreferrer">View on Maps <i class="bi bi-arrow-up-right"></i></a>'
           : "";
       $rail.append(
-        '<article class="event-item reveal focus-animate ' + (ev.highlight ? "is-highlight" : "") + '">' +
+        '<article class="event-item reveal ' + (ev.highlight ? "is-highlight" : "") + '">' +
           '<div class="event-icon">' + (ev.icon || "") + "</div>" +
           "<h3>" + ev.title + "</h3>" +
           '<p class="event-meta">' + ev.day + " · " + ev.date + " · " + ev.time + "</p>" +
@@ -336,7 +336,7 @@ $(function () {
           }
         });
       },
-      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
+      { threshold: 0.08, rootMargin: "0px 0px -2% 0px" }
     );
     els.forEach(function (el) {
       io.observe(el);
@@ -365,7 +365,7 @@ $(function () {
           }
         });
       },
-      { threshold: 0.22, rootMargin: "-8% 0px -12% 0px" }
+      { threshold: 0.06, rootMargin: "0px 0px 0px 0px" }
     );
     sections.forEach(function (el) {
       el.classList.add("is-outview");
