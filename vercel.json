@@ -3,8 +3,8 @@
   "trailingSlash": false,
   "redirects": [
     {
-      "source": "/images/hero1.JPG",
-      "destination": "/images/hero1.jpg",
+      "source": "/images/hero.jpg",
+      "destination": "/images/hero.jpg",
       "permanent": true
     },
     {
