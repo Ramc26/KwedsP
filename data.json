@@ -55,7 +55,7 @@
       "calendarTitleSuffix": "Wedding & Reception",
       "calendarLocationKey": "venue",
       "gateBtn": "Enter Invitation",
-      "heroImage": "images/hero.jpg",
+      "heroImage": "images/hero.jpg?v=3",
       "gateImage": "preview.png",
       "gateImageAlt": "Kamesh and Prasanna wedding invitation",
       "shareImage": "og-wedding.jpg",
@@ -207,7 +207,7 @@
     "label": "Temple Bells · Veena · Flute"
   },
   "images": {
-    "hero": "images/hero.jpg",
+    "hero": "images/hero.jpg?v=3",
     "coupleGroom": "images/groom.jpg",
     "coupleBride": "images/bride.jpg",
     "venue": "images/venue.jpg",

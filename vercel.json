@@ -3,11 +3,6 @@
   "trailingSlash": false,
   "redirects": [
     {
-      "source": "/images/hero.jpg",
-      "destination": "/images/hero.jpg",
-      "permanent": true
-    },
-    {
       "source": "/",
       "has": [{ "type": "query", "key": "c", "value": "e4p8n1" }],
       "destination": "/i/e4p8n1",
