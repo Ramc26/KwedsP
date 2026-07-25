@@ -373,14 +373,14 @@ window.WEDDING_DATA = {
       "names": "Sri Vuddagiri Subbarao Rao & Smt. Venkata Maha Lakshmi",
       "message": "We invite you to join us in celebrating this joyous occasion.",
       "family": "Vuddagiri Family",
-      "image": "images/family-groom.jpg"
+      "image": "images/family-groom.jpg?v=2"
     },
     {
       "side": "Bride's Parents",
       "names": "Sri Chiravuri Srinivas & Smt. Kotamaamba (Manju)",
       "message": "We look forward to sharing this special day with you.",
       "family": "Chiravuri Family",
-      "image": "images/family-bride.jpg"
+      "image": "images/family-bride.jpg?v=2"
     }
   ],
   "contacts": {

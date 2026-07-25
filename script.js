@@ -35,7 +35,8 @@ $(function () {
 
   function cssUrl(path) {
     var u = assetUrl(path);
-    return u ? 'url("' + u + '")' : "";
+    // Single quotes inside url() — safe in style="..." HTML attributes.
+    return u ? "url('" + String(u).replace(/'/g, "%27") + "')" : "";
   }
 
   function resolveInviteCode(d) {

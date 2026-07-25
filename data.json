@@ -232,12 +232,30 @@
   "navigation": {
     "brand": "Kamesh & Prasanna",
     "items": [
-      { "href": "#hero", "label": "Home" },
-      { "href": "#couple", "label": "Couple" },
-      { "href": "#when", "label": "When & Where" },
-      { "href": "#gallery", "label": "Gallery" },
-      { "href": "#family", "label": "Family" },
-      { "href": "#contact", "label": "Contact" }
+      {
+        "href": "#hero",
+        "label": "Home"
+      },
+      {
+        "href": "#couple",
+        "label": "Couple"
+      },
+      {
+        "href": "#when",
+        "label": "When & Where"
+      },
+      {
+        "href": "#gallery",
+        "label": "Gallery"
+      },
+      {
+        "href": "#family",
+        "label": "Family"
+      },
+      {
+        "href": "#contact",
+        "label": "Contact"
+      }
     ]
   },
   "groom": {
@@ -269,7 +287,9 @@
       "mapsUrl": "https://maps.app.goo.gl/NZWfCCQxr7DXunZJ8",
       "highlight": true,
       "icon": "ॐ",
-      "invite": ["full"]
+      "invite": [
+        "full"
+      ]
     },
     {
       "title": "Reception",
@@ -281,7 +301,10 @@
       "mapsUrl": "https://maps.app.goo.gl/p7vcNGpCoNY4Ru677",
       "highlight": false,
       "icon": "✧",
-      "invite": ["full", "reception"]
+      "invite": [
+        "full",
+        "reception"
+      ]
     }
   ],
   "timeline": [
@@ -350,14 +373,14 @@
       "names": "Sri Vuddagiri Subbarao Rao & Smt. Venkata Maha Lakshmi",
       "message": "We invite you to join us in celebrating this joyous occasion.",
       "family": "Vuddagiri Family",
-      "image": "images/family-groom.jpg"
+      "image": "images/family-groom.jpg?v=2"
     },
     {
       "side": "Bride's Parents",
       "names": "Sri Chiravuri Srinivas & Smt. Kotamaamba (Manju)",
       "message": "We look forward to sharing this special day with you.",
       "family": "Chiravuri Family",
-      "image": "images/family-bride.jpg"
+      "image": "images/family-bride.jpg?v=2"
     }
   ],
   "contacts": {
