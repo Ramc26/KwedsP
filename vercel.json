@@ -1,6 +1,20 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/",
+      "has": [{ "type": "query", "key": "c", "value": "e4p8n1" }],
+      "destination": "/i/e4p8n1",
+      "permanent": false
+    },
+    {
+      "source": "/",
+      "has": [{ "type": "query", "key": "c", "value": "w7k2m9" }],
+      "destination": "/i/w7k2m9",
+      "permanent": false
+    }
+  ],
   "rewrites": [
     { "source": "/i/w7k2m9", "destination": "/index.html" },
     { "source": "/i/e4p8n1", "destination": "/reception.html" }
@@ -11,6 +25,12 @@
       "headers": [
         { "key": "X-Content-Type-Options", "value": "nosniff" },
         { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+      ]
+    },
+    {
+      "source": "/og-(wedding|reception).jpg",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=86400, stale-while-revalidate=604800" }
       ]
     },
     {

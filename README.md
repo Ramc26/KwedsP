@@ -3,8 +3,7 @@
 Digital Telugu Hindu wedding invitation for **Veera Venkata Sathya Kameshwara Rao (Kamesh)** & **Lakshmi Prasanna (Prasanna)**.  
 Static site: HTML, Bootstrap 5, jQuery, custom CSS/JS. Content driven by `data.json` (embedded as `data.js` for `file://` and production).
 
-**Live:** [https://kwedsp.vercel.app](https://kwedsp.vercel.app)  
-**Custom domain (when configured):** update `siteUrl` in `data.json`.
+**Live:** [https://kwedsp.rambuilds.in](https://kwedsp.rambuilds.in)
 
 ---
 
@@ -155,16 +154,18 @@ WhatsApp link previews use static `<meta property="og:image">` in `index.html` (
 
 ## Invite links (private codes)
 
-Guessable `wedding` / `reception` URLs are disabled. Share these **codes** only with the right guests:
+WhatsApp reads **static HTML** — always share the `/i/...` paths (not bare domain, not `?c=` alone before deploy redirect).
 
-| Guests | Link |
-|--------|------|
-| Marriage + Reception | `https://kwedsp.vercel.app/i/w7k2m9` or `?c=w7k2m9` |
-| Reception only | `https://kwedsp.vercel.app/i/e4p8n1` or `?c=e4p8n1` |
+| Guests | Link to share |
+|--------|----------------|
+| Marriage + Reception | `https://kwedsp.rambuilds.in/i/w7k2m9` |
+| Reception only | `https://kwedsp.rambuilds.in/i/e4p8n1` |
 
-No code / wrong code → gate stays locked (“Invite link required”).
+Previews: wedding → `og-wedding.jpg`, reception → `og-reception.jpg`.
 
-Change codes anytime in `data.json` → `inviteModes.codes` (and match paths in `vercel.json`).
+After changing OG images, re-send the link in a **new** WhatsApp chat (or wait for cache) so the preview refreshes.
+
+Change codes in `data.json` → `inviteModes.codes` and match `vercel.json`.
 
 ---
 

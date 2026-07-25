@@ -1,5 +1,5 @@
 window.WEDDING_DATA = {
-  "siteUrl": "https://kwedsp.vercel.app",
+  "siteUrl": "https://kwedsp.rambuilds.in",
   "meta": {
     "tabTitle": "K♥P",
     "shareHeadline": "Kamesh & Prasanna — Wedding & Reception",
