@@ -3,6 +3,11 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/images/hero1.JPG",
+      "destination": "/images/hero1.jpg",
+      "permanent": true
+    },
+    {
       "source": "/",
       "has": [{ "type": "query", "key": "c", "value": "e4p8n1" }],
       "destination": "/i/e4p8n1",
@@ -36,13 +41,13 @@
     {
       "source": "/images/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        { "key": "Cache-Control", "value": "public, max-age=86400, stale-while-revalidate=604800" }
       ]
     },
     {
       "source": "/hero-icons/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        { "key": "Cache-Control", "value": "public, max-age=86400, stale-while-revalidate=604800" }
       ]
     }
   ]
