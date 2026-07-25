@@ -2,9 +2,9 @@
   "siteUrl": "https://kwedsp.vercel.app",
   "meta": {
     "tabTitle": "K♥P",
-    "shareHeadline": "Kamesh & Prasanna — Sri Rama Kalyana Vaibhavam",
-    "tagline": "You're invited to our Telugu Hindu wedding · 30 August 2026 · Muhurtham 11:29 AM · Seethanagaram & Neeladriraopeta, Andhra Pradesh.",
-    "shareImage": "og-preview.jpg",
+    "shareHeadline": "Kamesh & Prasanna — Wedding & Reception",
+    "tagline": "You're invited to our wedding (30 Aug 2026, Muhurtham 11:29 AM, Seethanagaram) and reception (2 Sep 2026, 7:00 PM, Neeladriraopeta).",
+    "shareImage": "og-wedding.jpg",
     "siteName": "Kamesh & Prasanna Wedding",
     "locale": "en_IN",
     "themeColor": "#6b1d2a"
@@ -12,7 +12,7 @@
   "brand": "Sri Rama Kalyana Vaibhavam",
   "pageTitle": "శుభ వివాహం",
   "title": "Kamesh & Prasanna | Sri Rama Kalyana Vaibhavam",
-  "description": "Join us for the traditional Telugu Hindu wedding of Kamesh and Prasanna — Sri Rama Kalyana Vaibhavam at Seethanagaram.",
+  "description": "Join us for the wedding ceremony and reception of Kamesh and Prasanna — Sri Rama Kalyana Vaibhavam.",
   "keywords": [
     "Telugu Wedding",
     "Hindu Wedding",
@@ -29,6 +29,97 @@
   "dayLabel": "Sunday",
   "muhurtham": "11:29 AM",
   "venuesSummary": "Wedding — Seethanagaram · Reception — Neeladriraopeta",
+  "inviteModes": {
+    "default": null,
+    "param": "c",
+    "codes": {
+      "w7k2m9": "full",
+      "e4p8n1": "reception"
+    },
+    "full": {
+      "meta": {
+        "shareHeadline": "Kamesh & Prasanna — Wedding & Reception",
+        "tagline": "You're invited to our wedding (30 Aug 2026, Muhurtham 11:29 AM, Seethanagaram) and reception (2 Sep 2026, 7:00 PM, Neeladriraopeta)."
+      },
+      "description": "Join us for the wedding ceremony and reception of Kamesh and Prasanna — Sri Rama Kalyana Vaibhavam.",
+      "brand": "Sri Rama Kalyana Vaibhavam",
+      "datetime": "2026-08-30T11:29:00+05:30",
+      "dateLabel": "30 August 2026",
+      "muhurtham": "11:29 AM",
+      "venuesSummary": "Wedding — Seethanagaram · Reception — Neeladriraopeta",
+      "whenKicker": "Celebrations",
+      "whenTitle": "When & Where",
+      "venuesPanelLead": "Wedding ceremony and reception at the locations below",
+      "showWeddingVenue": true,
+      "showTimeline": true,
+      "calendarTitleSuffix": "Wedding & Reception",
+      "calendarLocationKey": "venue",
+      "gateBtn": "Enter Invitation",
+      "heroImage": "images/hero1.jpg",
+      "gateImage": "preview.png",
+      "gateImageAlt": "Kamesh and Prasanna wedding invitation",
+      "shareImage": "og-wedding.jpg",
+      "welcome": {
+        "sanskrit": "शुभ विवाह",
+        "title": "Swagatam",
+        "telugu": "స్వాగతం",
+        "greeting": "With divine blessings, you are invited to our sacred wedding ceremony and the joyous reception that follows."
+      },
+      "invitation": {
+        "title": "With Gratitude",
+        "paragraphs": [
+          "Your presence at the muhurtham and reception will fill these sacred moments with love.",
+          "We seek your blessings as we begin life together."
+        ]
+      },
+      "familyMessages": {
+        "groom": "Please join us for the wedding muhurtham and the reception evening.",
+        "bride": "We would be honoured to have you with us for the wedding and reception."
+      }
+    },
+    "reception": {
+      "meta": {
+        "shareHeadline": "Kamesh & Prasanna — Reception Evening",
+        "tagline": "An evening reception · 02 September 2026 · 07:00 PM onwards · Subhamasthu Function Hall, Neeladriraopeta."
+      },
+      "description": "Join Kamesh and Prasanna for a warm reception evening at Subhamasthu Function Hall, Neeladriraopeta.",
+      "brand": "Reception Evening",
+      "datetime": "2026-09-02T19:00:00+05:30",
+      "dateLabel": "02 September 2026",
+      "muhurtham": "07:00 PM onwards",
+      "venuesSummary": "Come for dinner, smiles, and a little celebration with us.",
+      "whenKicker": "What to expect",
+      "whenTitle": "The evening flow",
+      "venuesPanelLead": "Where we’ll be",
+      "showWeddingVenue": false,
+      "showTimeline": true,
+      "useReceptionTimeline": true,
+      "calendarTitleSuffix": "Reception Evening",
+      "calendarLocationKey": "receptionVenue",
+      "gateBtn": "Enter Reception",
+      "heroImage": "images/gallery2.jpg",
+      "gateImage": "recep-preview.png",
+      "gateImageAlt": "Dinner reception invitation",
+      "shareImage": "og-reception.jpg",
+      "welcome": {
+        "sanskrit": "शुभ स्वागतम्",
+        "title": "Swagatam",
+        "telugu": "స్వాగతం",
+        "greeting": "An evening of music, dinner, and warm wishes. You are invited to celebrate with Kamesh, Prasanna, and our families."
+      },
+      "invitation": {
+        "title": "Thank You",
+        "paragraphs": [
+          "Your smile at our reception means the world to us.",
+          "Come as you are — we only ask for your blessings and good company."
+        ]
+      },
+      "familyMessages": {
+        "groom": "We would love your company at our reception evening.",
+        "bride": "Please join us for dinner, laughter, and blessings at the reception."
+      }
+    }
+  },
   "venue": {
     "label": "Wedding Venue",
     "name": "Raju Gari Gardens Kalyana Mandapam",
@@ -64,20 +155,6 @@
     "Lord Sri Rama",
     "Lord Venkateswara Swamy"
   ],
-  "hero": {
-    "lead": "With the divine blessings of",
-    "families": "Together with our families",
-    "invite": "We cordially invite you and your family to celebrate the joyous wedding ceremony and bless the newlyweds with your gracious presence.",
-    "verse": {
-      "telugu": "లోకాః సమస్తాః సుఖినో భవంతు",
-      "meaning": "May all beings in all worlds be happy"
-    }
-  },
-  "sanskritVerse": {
-    "line": "लोकाः समस्ताः सुखिनो भवन्तु",
-    "meaning": "May all beings in all worlds be happy",
-    "telugu": "శుభం భవతు"
-  },
   "welcome": {
     "title": "Swagatam",
     "sanskrit": "शुभ विवाह",
@@ -90,6 +167,20 @@
       "Your presence on this auspicious occasion will make our celebration even more meaningful.",
       "We sincerely request your blessings and good wishes as we begin our new journey together."
     ]
+  },
+  "hero": {
+    "lead": "With the divine blessings of",
+    "families": "Together with our families",
+    "invite": "We cordially invite you and your family to celebrate with us and bless the newlyweds with your gracious presence.",
+    "verse": {
+      "telugu": "లోకాః సమస్తాః సుఖినో భవంతు",
+      "meaning": "May all beings in all worlds be happy"
+    }
+  },
+  "sanskritVerse": {
+    "line": "लोकाः समस्ताः सुखिनो भवन्तु",
+    "meaning": "May all beings in all worlds be happy",
+    "telugu": "శుభం భవతు"
   },
   "venueInfo": {
     "directions": "Raju Gari Gardens Kalyana Mandapam is in Seethanagaram, Andhra Pradesh — easily reachable from nearby towns and major roads.",
@@ -105,7 +196,7 @@
   "footer": {
     "lead": "With Love & Blessings",
     "families": [
-      "Uddagiri Family",
+      "Vuddagiri Family",
       "Chiravuri Family"
     ],
     "thanksTitle": "Thank You",
@@ -116,7 +207,7 @@
     "label": "Temple Bells · Veena · Flute"
   },
   "images": {
-    "hero": "images/hero.jpg",
+    "hero": "images/hero1.jpg",
     "coupleGroom": "images/groom.jpg",
     "coupleBride": "images/bride.jpg",
     "venue": "images/venue.jpg",
@@ -124,10 +215,9 @@
       "images/gallery1.jpg",
       "images/gallery2.jpg",
       "images/gallery3.jpg",
-      "images/gallery4.jpg",
-      "images/gallery5.jpg",
-      "images/gallery6.jpg"
-    ]
+      "images/gallery4.jpg"
+    ],
+    "receptionMood": "recep-preview.png"
   },
   "seal": "K & P",
   "heroIcons": [
@@ -151,11 +241,11 @@
     ]
   },
   "groom": {
-    "fullName": "Mr. Venkata Satya Kameswara Rao",
+    "fullName": "Mr. Veera Venkata Sathya Kameshwara Rao",
     "displayName": "Kamesh",
-    "father": "Sri Uddagiri Subbarao Rao",
+    "father": "Sri Vuddagiri Subbarao Rao",
     "mother": "Smt. Venkata Maha Lakshmi",
-    "family": "Uddagiri Family",
+    "family": "Vuddagiri Family",
     "role": "Son of",
     "education": ""
   },
@@ -174,22 +264,24 @@
       "date": "30 August 2026",
       "day": "Sunday",
       "time": "Muhurtham 11:29 AM",
-      "description": "Sacred Telugu wedding rites, mangalasutram, and blessings.",
+      "description": "Sacred Telugu wedding rites, mangalasutram, and blessings. We request the honour of your presence.",
       "location": "Raju Gari Gardens Kalyana Mandapam, Seethanagaram, Andhra Pradesh 533287",
       "mapsUrl": "https://maps.app.goo.gl/NZWfCCQxr7DXunZJ8",
       "highlight": true,
-      "icon": "ॐ"
+      "icon": "ॐ",
+      "invite": ["full"]
     },
     {
       "title": "Reception",
       "date": "02 September 2026",
       "day": "Wednesday",
       "time": "07:00 PM onwards",
-      "description": "An evening of celebration with family and friends.",
+      "description": "Dinner, music, and heartfelt wishes with family and friends. Come celebrate the newlyweds.",
       "location": "Subhamasthu Function Hall, beside NH 16, Neeladriraopeta, Andhra Pradesh 533435",
       "mapsUrl": "https://maps.app.goo.gl/p7vcNGpCoNY4Ru677",
       "highlight": false,
-      "icon": "✧"
+      "icon": "✧",
+      "invite": ["full", "reception"]
     }
   ],
   "timeline": [
@@ -225,12 +317,39 @@
       "icon": "❀"
     }
   ],
+  "receptionTimeline": [
+    {
+      "time": "07:00 PM",
+      "title": "You arrive",
+      "description": "Walk in, say hello, and settle in. We’re so glad you’re here.",
+      "icon": "❀"
+    },
+    {
+      "time": "07:30 PM",
+      "title": "Meet the couple",
+      "description": "A warm welcome from Kamesh and Prasanna — hugs, photos, and good wishes.",
+      "highlight": true,
+      "icon": "✧"
+    },
+    {
+      "time": "08:00 PM",
+      "title": "Dinner & chat",
+      "description": "Good food, easy conversation, and music in the background.",
+      "icon": "♫"
+    },
+    {
+      "time": "09:30 PM",
+      "title": "Thank you",
+      "description": "We’ll wrap up with gratitude. Thank you for celebrating with our families.",
+      "icon": "❀"
+    }
+  ],
   "familyInvites": [
     {
       "side": "Groom's Parents",
-      "names": "Sri Uddagiri Subbarao Rao & Smt. Venkata Maha Lakshmi",
+      "names": "Sri Vuddagiri Subbarao Rao & Smt. Venkata Maha Lakshmi",
       "message": "We invite you to join us in celebrating this joyous occasion.",
-      "family": "Uddagiri Family",
+      "family": "Vuddagiri Family",
       "image": "images/family-groom.jpg"
     },
     {
@@ -252,7 +371,7 @@
     },
     "groomSide": {
       "label": "Groom Side",
-      "name": "Uddagiri Family",
+      "name": "Vuddagiri Family",
       "phone": "+91 XXXXX XXXXX",
       "phoneHref": "tel:+91XXXXXXXXXX",
       "whatsapp": "https://wa.me/91XXXXXXXXXX",

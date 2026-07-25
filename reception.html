@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>window.__KWEDS_INVITE_CODE__="e4p8n1";</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>K♥P</title>
+  <meta name="description" content="An evening reception · 02 September 2026 · 07:00 PM onwards · Subhamasthu Function Hall, Neeladriraopeta.">
+  <meta name="keywords" content="Telugu Wedding, Hindu Wedding, Kamesh, Prasanna, Kalyana Vaibhavam, Seethanagaram, Andhra Pradesh, Wedding Invitation">
+  <meta name="author" content="RamBikkina">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#6b1d2a">
+  <meta name="apple-mobile-web-app-title" content="K♥P">
+  <meta name="application-name" content="K♥P">
+
+  <link rel="canonical" id="canonicalUrl" href="https://kwedsp.vercel.app/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/og-reception.jpg">
+
+  <!-- Open Graph / Facebook / WhatsApp (must match live host + image under ~300KB) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Kamesh & Prasanna Wedding">
+  <meta property="og:locale" content="en_IN">
+  <meta property="og:url" content="https://kwedsp.vercel.app/i/e4p8n1">
+  <meta property="og:title" content="Kamesh & Prasanna — Reception Evening">
+  <meta property="og:description" content="An evening reception · 02 September 2026 · 07:00 PM onwards · Subhamasthu Function Hall, Neeladriraopeta.">
+  <meta property="og:image" content="https://kwedsp.vercel.app/og-reception.jpg">
+  <meta property="og:image:secure_url" content="https://kwedsp.vercel.app/og-reception.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:alt" content="Kamesh & Prasanna dinner reception invitation collage">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="800">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Kamesh & Prasanna — Reception Evening">
+  <meta name="twitter:description" content="An evening reception · 02 September 2026 · 07:00 PM onwards · Subhamasthu Function Hall, Neeladriraopeta.">
+  <meta name="twitter:image" content="https://kwedsp.vercel.app/og-reception.jpg">
+  <meta name="twitter:image:alt" content="Kamesh & Prasanna dinner reception invitation collage">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anek+Telugu:wght@400;600;700&family=Figtree:wght@300;400;500;600&family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap" rel="stylesheet">
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Cal+Sans&family=Ewert&family=Fleur+De+Leah&display=swap");
+  </style>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="interactive.css">
+</head>
+<body class="is-locked">
+
+  <!-- Gate -->
+  <div id="gate" class="gate" aria-hidden="false">
+    <div class="gate-panel">
+      <div class="gate-mood" id="gateMood" hidden>
+        <img id="gateMoodImg" src="" alt="">
+      </div>
+      <p class="gate-sanskrit" data-field="welcome.sanskrit"></p>
+      <h2 class="gate-title fleur-de-leah-regular" data-field="welcome.title"></h2>
+      <p class="gate-telugu" data-field="welcome.telugu"></p>
+      <p class="gate-greeting" data-field="welcome.greeting"></p>
+      <button type="button" id="openInvitation" class="gate-btn cal-sans-regular">Enter Invitation</button>
+      <p class="gate-audio-note">Audio starts muted · tap the speaker to unmute</p>
+    </div>
+  </div>
+
+  <!-- Blessings: center stack → fly to top L/C/R (over blurred hero) -->
+  <div id="blessingsStage" class="blessings-stage" aria-hidden="true">
+    <div class="blessings-stack">
+      <div class="bless-fly-wrap">
+        <div class="bless-fly" data-slot="left"><i>||</i><b>శ్రీ రస్తు</b><i>||</i></div>
+      </div>
+      <div class="bless-fly-wrap">
+        <div class="bless-fly" data-slot="center"><i>||</i><b>శుభమస్తు</b><i>||</i></div>
+      </div>
+      <div class="bless-fly-wrap">
+        <div class="bless-fly" data-slot="right"><i>||</i><b>అవిఘ్నమస్తు</b><i>||</i></div>
+      </div>
+    </div>
+  </div>
+  <div id="blessingsBar" class="blessings-bar" aria-hidden="true">
+    <span class="bless-slot" data-slot="left"></span>
+    <span class="bless-slot" data-slot="center"></span>
+    <span class="bless-slot" data-slot="right"></span>
+  </div>
+
+  <audio id="bgAudio" loop preload="none" muted></audio>
+  <button type="button" id="muteBtn" class="float-btn float-mute d-none" aria-label="Unmute audio">
+    <i class="bi bi-volume-mute-fill"></i>
+  </button>
+
+  <nav class="site-nav" id="siteNav" aria-label="Primary">
+    <a class="nav-brand fleur-de-leah-regular" href="#hero" data-field="navigation.brand"></a>
+    <button type="button" class="nav-toggle" id="navToggle" aria-label="Menu">
+      <i class="bi bi-list"></i>
+    </button>
+    <ul class="nav-links" id="navLinks"></ul>
+  </nav>
+
+  <!-- Hero -->
+  <section id="hero" class="hero section-focus">
+    <div class="hero-media" id="heroMedia" role="img" aria-label="Wedding atmosphere"></div>
+    <div class="hero-veil"></div>
+    <div class="hero-inner">
+      <div class="hero-glitter" id="heroGlitter" aria-hidden="true"></div>
+      <p class="hero-brand hero-anim fleur-de-leah-regular" data-field="brand"></p>
+      <h1 class="hero-names">
+        <span class="name-line hero-anim ewert-regular" data-field="groom.displayName"></span>
+        <div class="icon-wheel hero-anim" id="iconWheel" aria-hidden="true">
+          <div class="icon-wheel-ring" id="iconWheelRing"></div>
+        </div>
+        <span class="name-line hero-anim ewert-regular" data-field="bride.displayName"></span>
+      </h1>
+      <p class="hero-meta hero-anim">
+        <span data-field="dateLabel"></span>
+        <span class="meta-dot">·</span>
+        <span data-field="muhurtham"></span>
+      </p>
+      <div class="countdown hero-anim" id="countdown" aria-live="polite">
+        <div class="cd-unit"><span id="cdDays">00</span><small>Days</small></div>
+        <div class="cd-unit"><span id="cdHours">00</span><small>Hrs</small></div>
+        <div class="cd-unit"><span id="cdMins">00</span><small>Min</small></div>
+        <div class="cd-unit"><span id="cdSecs">00</span><small>Sec</small></div>
+      </div>
+      <a id="saveDateBtn" class="cal-btn hero-anim cal-sans-regular" href="#" target="_blank" rel="noopener noreferrer">Save the Date</a>
+    </div>
+    <a href="#couple" class="hero-scroll" aria-label="Scroll to couple">
+      <i class="bi bi-chevron-down"></i>
+    </a>
+  </section>
+
+  <!-- Couple -->
+  <section id="couple" class="section couple-section section-focus">
+    <div class="container">
+      <header class="section-head focus-animate">
+        <p class="section-kicker">The Couple</p>
+        <h2>Bride & Groom</h2>
+      </header>
+      <div class="couple-stack">
+        <article class="person person-groom reveal">
+          <div class="person-frame">
+            <div class="person-glow" aria-hidden="true"></div>
+            <div class="person-photo" id="groomPhoto"></div>
+            <span class="person-badge">Groom</span>
+          </div>
+          <div class="person-copy">
+            <h3 data-field="groom.fullName"></h3>
+            <p class="person-parents">
+              <span data-field="groom.role"></span>
+              <strong data-field="groom.father"></strong>
+              &amp;<br>
+              <strong data-field="groom.mother"></strong>
+            </p>
+            <p class="person-family" data-field="groom.family"></p>
+          </div>
+        </article>
+        <article class="person person-bride reveal">
+          <div class="person-frame">
+            <div class="person-glow" aria-hidden="true"></div>
+            <div class="person-photo" id="bridePhoto"></div>
+            <span class="person-badge">Bride</span>
+          </div>
+          <div class="person-copy">
+            <h3 data-field="bride.fullName"></h3>
+            <p class="person-parents">
+              <span data-field="bride.role"></span>
+              <strong data-field="bride.father"></strong>
+              &amp;<br>
+              <strong data-field="bride.mother"></strong>
+            </p>
+            <p class="person-family" data-field="bride.family"></p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <div class="ornament" aria-hidden="true"><span></span></div>
+
+  <!-- When & Where -->
+  <section id="when" class="section when-section section-focus">
+    <div class="container">
+      <header class="section-head focus-animate">
+        <p class="section-kicker" id="whenKicker">Celebrations</p>
+        <h2 id="whenTitle">When & Where</h2>
+        <p class="section-lead" data-field="venuesSummary"></p>
+      </header>
+
+      <div class="events-rail" id="eventsRail"></div>
+
+      <div class="timeline-wrap reveal" id="timelineWrap">
+        <h3 class="timeline-title focus-animate fleur-de-leah-regular" id="timelineTitle">Wedding Day Flow</h3>
+        <ol class="timeline" id="timeline"></ol>
+      </div>
+
+      <div class="venues-panel reveal">
+        <header class="venues-panel-head focus-animate">
+          <h3 class="venues-panel-title fleur-de-leah-regular">Venue Details</h3>
+          <p class="venues-panel-lead" id="venuesPanelLead">Wedding ceremony and reception at the locations below</p>
+        </header>
+
+        <article class="venue-card reveal" id="weddingVenueCard">
+          <div class="venue-card-banner">
+            <div class="venue-card-photo" id="venuePhoto" role="img" aria-label="Wedding venue"></div>
+            <span class="venue-card-tag" data-field="venue.label"></span>
+          </div>
+          <div class="venue-card-body">
+            <div class="venue-card-info">
+              <h4 class="venue-card-name" data-field="venue.name"></h4>
+              <p class="venue-card-address" data-field="venue.fullAddress"></p>
+              <ul class="venue-facts">
+                <li>
+                  <i class="bi bi-signpost-split" aria-hidden="true"></i>
+                  <span data-field="venueInfo.directions"></span>
+                </li>
+                <li>
+                  <i class="bi bi-p-circle" aria-hidden="true"></i>
+                  <span data-field="venueInfo.parking"></span>
+                </li>
+                <li>
+                  <i class="bi bi-airplane" aria-hidden="true"></i>
+                  <span id="venueTravel"></span>
+                </li>
+              </ul>
+              <a class="venue-card-link" id="mapsLink" target="_blank" rel="noopener noreferrer">
+                Open in Google Maps <i class="bi bi-arrow-up-right"></i>
+              </a>
+            </div>
+            <div class="venue-card-map">
+              <iframe id="mapsEmbed" title="Wedding venue map" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+          </div>
+        </article>
+
+        <article class="venue-card venue-card--reception reveal" id="receptionVenueCard">
+          <div class="venue-card-banner">
+            <div class="venue-card-photo" id="receptionVenuePhoto" role="img" aria-label="Reception venue"></div>
+            <span class="venue-card-tag" data-field="receptionVenue.label"></span>
+          </div>
+          <div class="venue-card-body">
+            <div class="venue-card-info">
+              <h4 class="venue-card-name" data-field="receptionVenue.name"></h4>
+              <p class="venue-card-event-meta" id="receptionEventMeta" hidden></p>
+              <p class="venue-card-address" data-field="receptionVenue.fullAddress"></p>
+              <ul class="venue-facts">
+                <li>
+                  <i class="bi bi-signpost-split" aria-hidden="true"></i>
+                  <span data-field="receptionVenueInfo.directions"></span>
+                </li>
+                <li>
+                  <i class="bi bi-p-circle" aria-hidden="true"></i>
+                  <span data-field="receptionVenueInfo.parking"></span>
+                </li>
+                <li>
+                  <i class="bi bi-car-front" aria-hidden="true"></i>
+                  <span id="receptionTravel"></span>
+                </li>
+              </ul>
+              <a class="venue-card-link" id="receptionMapsLink" target="_blank" rel="noopener noreferrer">
+                Open in Google Maps <i class="bi bi-arrow-up-right"></i>
+              </a>
+            </div>
+            <div class="venue-card-map">
+              <iframe id="receptionMapsEmbed" title="Reception venue map" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <div class="ornament" aria-hidden="true"><span></span></div>
+
+  <!-- Gallery -->
+  <section id="gallery" class="section gallery-section section-focus">
+    <div class="container">
+      <header class="section-head focus-animate">
+        <p class="section-kicker">Moments</p>
+        <h2>The Gallery</h2>
+      </header>
+      <div id="galleryCarousel" class="carousel slide reveal" data-bs-ride="carousel">
+        <div class="carousel-inner" id="galleryInner"></div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#galleryCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#galleryCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <div class="ornament" aria-hidden="true"><span></span></div>
+
+  <!-- Family -->
+  <section id="family" class="section family-section section-focus">
+    <div class="container">
+      <header class="section-head focus-animate">
+        <p class="section-kicker" data-field="invitation.title"></p>
+        <h2>Invitation from Our Families</h2>
+      </header>
+      <div class="family-grid" id="familyGrid"></div>
+      <div class="gratitude reveal">
+        <p id="inviteP1"></p>
+        <p id="inviteP2"></p>
+      </div>
+    </div>
+  </section>
+
+  <div class="ornament" aria-hidden="true"><span></span></div>
+
+  <!-- Contact -->
+  <section id="contact" class="section contact-section section-focus">
+    <div class="container">
+      <header class="section-head focus-animate">
+        <p class="section-kicker">Reach Us</p>
+        <h2>Contact</h2>
+      </header>
+      <div class="contact-grid" id="contactGrid"></div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <p class="dev-credit">
+      Designed and Developed by
+      <a href="https://rambuilds.in" target="_blank" rel="noopener noreferrer">RamBikkina</a>
+      with love
+    </p>
+  </footer>
+
+  <canvas id="flowerShowerCanvas" class="flower-shower-canvas" aria-hidden="true"></canvas>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="data.js"></script>
+  <script src="interactive.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

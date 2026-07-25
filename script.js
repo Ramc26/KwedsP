@@ -20,9 +20,159 @@ $(function () {
   ];
   var iconIndex = 0;
   var iconTurn = 0;
+  var inviteType = "full";
 
   if (audioEl) {
     audioEl.muted = true;
+  }
+
+  function resolveInviteCode(d) {
+    var modes = (d && d.inviteModes) || {};
+    var codes = modes.codes || {};
+    var paramName = modes.param || "c";
+
+    if (window.__KWEDS_INVITE_CODE__) {
+      var forced = String(window.__KWEDS_INVITE_CODE__).toLowerCase();
+      if (codes[forced]) return { code: forced, type: codes[forced] };
+    }
+
+    var params = new URLSearchParams(window.location.search);
+    var q = String(params.get(paramName) || params.get("code") || "").toLowerCase();
+    if (q && codes[q]) return { code: q, type: codes[q] };
+
+    var path = String(window.location.pathname || "")
+      .replace(/\/+$/, "")
+      .toLowerCase();
+    var match = path.match(/\/i\/([a-z0-9-]+)$/);
+    if (match && codes[match[1]]) {
+      return { code: match[1], type: codes[match[1]] };
+    }
+
+    // Legacy private HTML entry (reception.html) still works via forced code
+    if (window.__KWEDS_INVITE__ === "reception") {
+      var rx = Object.keys(codes).find(function (k) {
+        return codes[k] === "reception";
+      });
+      if (rx) return { code: rx, type: "reception" };
+    }
+    if (window.__KWEDS_INVITE__ === "full") {
+      var full = Object.keys(codes).find(function (k) {
+        return codes[k] === "full";
+      });
+      if (full) return { code: full, type: "full" };
+    }
+
+    return { code: null, type: null };
+  }
+
+  function getInviteType(d) {
+    return resolveInviteCode(d).type;
+  }
+
+  function showInviteLocked() {
+    $("body").attr("data-invite", "locked").addClass("invite-locked");
+    $("#gateMood").prop("hidden", true);
+    setField("welcome.sanskrit", "॥ शुभम् ॥");
+    setField("welcome.title", "Swagatam");
+    setField("welcome.telugu", "స్వాగతం");
+    setField("welcome.greeting", "Please open the personal invite link shared with you to continue.");
+    $("#openInvitation")
+      .prop("disabled", true)
+      .text("Invite link required")
+      .addClass("is-disabled");
+    $("#gate").attr("aria-hidden", "false").removeClass("is-open");
+    $("body").addClass("is-locked");
+  }
+
+  function applyInviteMode(raw) {
+    var d = $.extend(true, {}, raw);
+    var access = resolveInviteCode(d);
+    inviteType = access.type;
+    var modes = d.inviteModes || {};
+    var mode = (inviteType && modes[inviteType]) || null;
+
+    d.inviteType = inviteType;
+    d.inviteCode = access.code;
+
+    if (!inviteType || !mode) {
+      d.inviteLocked = true;
+      return d;
+    }
+
+    d.inviteLocked = false;
+
+    if (mode.meta) {
+      d.meta = $.extend({}, d.meta || {}, mode.meta);
+    }
+    if (mode.description) d.description = mode.description;
+    if (mode.brand) d.brand = mode.brand;
+    if (mode.datetime) d.datetime = mode.datetime;
+    if (mode.dateLabel) d.dateLabel = mode.dateLabel;
+    if (mode.muhurtham) d.muhurtham = mode.muhurtham;
+    if (mode.venuesSummary) d.venuesSummary = mode.venuesSummary;
+    if (mode.venuesPanelLead) d.venuesPanelLead = mode.venuesPanelLead;
+    if (mode.timelineTitle) d.timelineTitle = mode.timelineTitle;
+    if (mode.whenKicker) d.whenKicker = mode.whenKicker;
+    if (mode.whenTitle) d.whenTitle = mode.whenTitle;
+    if (mode.gateBtn) d.gateBtn = mode.gateBtn;
+    if (mode.gateImage) d.gateImage = mode.gateImage;
+    if (mode.gateImageAlt) d.gateImageAlt = mode.gateImageAlt;
+    if (mode.shareImage) {
+      d.meta = d.meta || {};
+      d.meta.shareImage = mode.shareImage;
+    }
+    if (mode.heroImage) {
+      d.images = $.extend({}, d.images || {});
+      d.images.hero = mode.heroImage;
+    }
+    d.showWeddingVenue = mode.showWeddingVenue !== false;
+    d.showTimeline = mode.showTimeline !== false;
+    d.calendarTitleSuffix = mode.calendarTitleSuffix || d.brand;
+    d.calendarLocationKey = mode.calendarLocationKey || "venue";
+
+    if (mode.welcome) {
+      d.welcome = $.extend({}, d.welcome || {}, mode.welcome);
+    }
+    if (mode.invitation) {
+      d.invitation = $.extend({}, d.invitation || {}, mode.invitation);
+    }
+
+    d.celebrations = (d.celebrations || []).filter(function (ev) {
+      var list = ev.invite || ["full", "reception"];
+      return list.indexOf(inviteType) !== -1;
+    });
+    if (inviteType === "reception") {
+      d.celebrations = d.celebrations.map(function (ev, i) {
+        var copy = $.extend({}, ev);
+        copy.highlight = i === 0;
+        return copy;
+      });
+    }
+
+    if (mode.useReceptionTimeline && d.receptionTimeline) {
+      d.timeline = d.receptionTimeline;
+    }
+
+    if (mode.familyMessages && d.familyInvites) {
+      d.familyInvites = d.familyInvites.map(function (f) {
+        var copy = $.extend({}, f);
+        var side = String(f.side || "").toLowerCase();
+        if (side.indexOf("groom") !== -1 && mode.familyMessages.groom) {
+          copy.message = mode.familyMessages.groom;
+        }
+        if (side.indexOf("bride") !== -1 && mode.familyMessages.bride) {
+          copy.message = mode.familyMessages.bride;
+        }
+        return copy;
+      });
+    }
+
+    $("body")
+      .attr("data-invite", inviteType)
+      .toggleClass("invite-reception", inviteType === "reception")
+      .toggleClass("invite-full", inviteType === "full");
+
+    return d;
   }
 
   function setField(path, value) {
@@ -41,6 +191,9 @@ $(function () {
       ? imgPath
       : site + "/" + String(imgPath).replace(/^\//, "");
     var pageUrl = site ? site + "/" : window.location.href;
+    if (d.inviteCode && site) {
+      pageUrl = site + "/i/" + d.inviteCode;
+    }
     var keywords = (d.keywords || []).join(", ");
 
     document.title = tabTitle;
@@ -82,6 +235,23 @@ $(function () {
     setField("welcome.title", d.welcome && d.welcome.title);
     setField("welcome.telugu", d.welcome && d.welcome.telugu);
     setField("welcome.greeting", d.welcome && d.welcome.greeting);
+    if (d.gateBtn) {
+      $("#openInvitation").text(d.gateBtn);
+    }
+    if (d.whenKicker) {
+      $("#whenKicker").text(d.whenKicker);
+    }
+    if (d.whenTitle) {
+      $("#whenTitle").text(d.whenTitle);
+    }
+    if (d.gateImage) {
+      $("#gateMoodImg")
+        .attr("src", d.gateImage)
+        .attr("alt", d.gateImageAlt || "");
+      $("#gateMood").prop("hidden", false);
+    } else {
+      $("#gateMood").prop("hidden", true);
+    }
     setField("navigation.brand", d.navigation && d.navigation.brand);
     setField("groom.displayName", d.groom && d.groom.displayName);
     setField("bride.displayName", d.bride && d.bride.displayName);
@@ -98,6 +268,26 @@ $(function () {
     setField("bride.mother", d.bride && d.bride.mother);
     setField("bride.family", d.bride && d.bride.family);
     setField("venuesSummary", d.venuesSummary);
+    if (d.venuesPanelLead) {
+      $("#venuesPanelLead").text(d.venuesPanelLead);
+    }
+    if (d.timelineTitle) {
+      $("#timelineTitle").text(d.timelineTitle);
+    }
+    $("#weddingVenueCard").toggle(!!d.showWeddingVenue);
+    $("#timelineWrap").toggle(!!d.showTimeline && !!(d.timeline && d.timeline.length));
+
+    var $rxMeta = $("#receptionEventMeta");
+    if (inviteType === "reception" && d.celebrations && d.celebrations[0]) {
+      var ev = d.celebrations[0];
+      $rxMeta
+        .text(ev.day + " · " + ev.date + " · " + ev.time)
+        .prop("hidden", false)
+        .addClass("is-visible");
+    } else {
+      $rxMeta.prop("hidden", true).removeClass("is-visible").text("");
+    }
+
     setField("venue.label", d.venue && d.venue.label);
     setField("venue.fullAddress", d.venue && d.venue.fullAddress);
     setField("venue.name", d.venue && d.venue.name);
@@ -124,7 +314,12 @@ $(function () {
 
     if (d.images) {
       if (d.images.hero) {
-        $("#heroMedia").css("background-image", 'url("' + d.images.hero + '")');
+        $("#heroMedia")
+          .css("background-image", 'url("' + d.images.hero + '")')
+          .attr(
+            "aria-label",
+            inviteType === "reception" ? "Reception atmosphere" : "Wedding atmosphere"
+          );
       }
       if (d.images.coupleGroom) {
         $("#groomPhoto").css("background-image", 'url("' + d.images.coupleGroom + '")');
@@ -134,6 +329,13 @@ $(function () {
       }
       if (d.images.venue) {
         $("#venuePhoto").css("background-image", 'url("' + d.images.venue + '")');
+      }
+      var receptionPhoto =
+        inviteType === "reception"
+          ? d.gateImage || d.images.receptionMood || (d.images.gallery && d.images.gallery[1])
+          : d.images.receptionMood || (d.images.gallery && d.images.gallery[1]);
+      if (receptionPhoto) {
+        $("#receptionVenuePhoto").css("background-image", 'url("' + receptionPhoto + '")');
       }
     }
 
@@ -273,9 +475,13 @@ $(function () {
       ((d.groom && d.groom.displayName) || "") +
       " & " +
       ((d.bride && d.bride.displayName) || "");
-    var title = encodeURIComponent(names + " — " + (d.brand || "Wedding"));
+    var title = encodeURIComponent(
+      names + " — " + (d.calendarTitleSuffix || d.brand || "Wedding")
+    );
     var details = encodeURIComponent(d.description || "");
-    var location = encodeURIComponent((d.venue && d.venue.fullAddress) || "");
+    var locObj =
+      d.calendarLocationKey === "receptionVenue" ? d.receptionVenue : d.venue;
+    var location = encodeURIComponent((locObj && locObj.fullAddress) || "");
     var dates = toGoogleDate(start) + "/" + toGoogleDate(end);
 
     var googleUrl =
@@ -465,6 +671,10 @@ $(function () {
     $("#heroGlitter").addClass("is-on");
     $(".hero-brand").addClass("is-in");
 
+    if (window.KwedsInteractive && window.KwedsInteractive.playRosePetals) {
+      window.KwedsInteractive.playRosePetals();
+    }
+
     setTimeout(function () {
       $(".hero-names .name-line").first().addClass("is-in");
     }, 450);
@@ -581,7 +791,14 @@ $(function () {
   }
 
   function renderAll(d) {
-    data = d;
+    data = applyInviteMode(d);
+    d = data;
+
+    if (d.inviteLocked) {
+      showInviteLocked();
+      return;
+    }
+
     if (d.heroIcons && d.heroIcons.length) {
       heroIcons = d.heroIcons;
     }
@@ -594,9 +811,13 @@ $(function () {
     buildContacts(d);
     buildCalendar(d);
     if (d.datetime) startCountdown(d.datetime);
+    if (window.KwedsInteractive && window.KwedsInteractive.init) {
+      window.KwedsInteractive.init(d);
+    }
   }
 
   function openSite() {
+    if (!data || data.inviteLocked) return;
     $gate.addClass("is-open");
     $gate.attr("aria-hidden", "true");
     $("body").removeClass("is-locked");

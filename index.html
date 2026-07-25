@@ -14,17 +14,17 @@
 
   <link rel="canonical" id="canonicalUrl" href="https://kwedsp.vercel.app/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="/og-preview.jpg">
+  <link rel="apple-touch-icon" href="/og-wedding.jpg">
 
   <!-- Open Graph / Facebook / WhatsApp (must match live host + image under ~300KB) -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Kamesh & Prasanna Wedding">
   <meta property="og:locale" content="en_IN">
-  <meta property="og:url" content="https://kwedsp.vercel.app/">
-  <meta property="og:title" content="Kamesh & Prasanna — Sri Rama Kalyana Vaibhavam">
-  <meta property="og:description" content="You're invited to our Telugu Hindu wedding · 30 August 2026 · Muhurtham 11:29 AM · Seethanagaram & Neeladriraopeta, Andhra Pradesh.">
-  <meta property="og:image" content="https://kwedsp.vercel.app/og-preview.jpg">
-  <meta property="og:image:secure_url" content="https://kwedsp.vercel.app/og-preview.jpg">
+  <meta property="og:url" content="https://kwedsp.vercel.app/i/w7k2m9">
+  <meta property="og:title" content="Kamesh & Prasanna — Wedding & Reception">
+  <meta property="og:description" content="You're invited to our wedding (30 Aug 2026, Muhurtham 11:29 AM, Seethanagaram) and reception (2 Sep 2026, 7:00 PM, Neeladriraopeta).">
+  <meta property="og:image" content="https://kwedsp.vercel.app/og-wedding.jpg">
+  <meta property="og:image:secure_url" content="https://kwedsp.vercel.app/og-wedding.jpg">
   <meta property="og:image:type" content="image/jpeg">
   <meta property="og:image:alt" content="Kamesh & Prasanna wedding invitation collage">
   <meta property="og:image:width" content="1200">
@@ -32,9 +32,9 @@
 
   <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Kamesh & Prasanna — Sri Rama Kalyana Vaibhavam">
-  <meta name="twitter:description" content="You're invited to our Telugu Hindu wedding · 30 August 2026 · Muhurtham 11:29 AM · Seethanagaram & Neeladriraopeta, Andhra Pradesh.">
-  <meta name="twitter:image" content="https://kwedsp.vercel.app/og-preview.jpg">
+  <meta name="twitter:title" content="Kamesh & Prasanna — Wedding & Reception">
+  <meta name="twitter:description" content="You're invited to our wedding (30 Aug 2026, Muhurtham 11:29 AM, Seethanagaram) and reception (2 Sep 2026, 7:00 PM, Neeladriraopeta).">
+  <meta name="twitter:image" content="https://kwedsp.vercel.app/og-wedding.jpg">
   <meta name="twitter:image:alt" content="Kamesh & Prasanna wedding invitation collage">
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
@@ -46,12 +46,16 @@
     @import url("https://fonts.googleapis.com/css2?family=Cal+Sans&family=Ewert&family=Fleur+De+Leah&display=swap");
   </style>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="interactive.css">
 </head>
 <body class="is-locked">
 
   <!-- Gate -->
   <div id="gate" class="gate" aria-hidden="false">
     <div class="gate-panel">
+      <div class="gate-mood" id="gateMood" hidden>
+        <img id="gateMoodImg" src="" alt="">
+      </div>
       <p class="gate-sanskrit" data-field="welcome.sanskrit"></p>
       <h2 class="gate-title fleur-de-leah-regular" data-field="welcome.title"></h2>
       <p class="gate-telugu" data-field="welcome.telugu"></p>
@@ -145,7 +149,7 @@
             <p class="person-parents">
               <span data-field="groom.role"></span>
               <strong data-field="groom.father"></strong>
-              &amp;
+              &amp;<br>
               <strong data-field="groom.mother"></strong>
             </p>
             <p class="person-family" data-field="groom.family"></p>
@@ -162,7 +166,7 @@
             <p class="person-parents">
               <span data-field="bride.role"></span>
               <strong data-field="bride.father"></strong>
-              &amp;
+              &amp;<br>
               <strong data-field="bride.mother"></strong>
             </p>
             <p class="person-family" data-field="bride.family"></p>
@@ -178,25 +182,25 @@
   <section id="when" class="section when-section section-focus">
     <div class="container">
       <header class="section-head focus-animate">
-        <p class="section-kicker">Celebrations</p>
-        <h2>When & Where</h2>
+        <p class="section-kicker" id="whenKicker">Celebrations</p>
+        <h2 id="whenTitle">When & Where</h2>
         <p class="section-lead" data-field="venuesSummary"></p>
       </header>
 
       <div class="events-rail" id="eventsRail"></div>
 
-      <div class="timeline-wrap reveal">
-        <h3 class="timeline-title focus-animate fleur-de-leah-regular">Wedding Day Flow</h3>
+      <div class="timeline-wrap reveal" id="timelineWrap">
+        <h3 class="timeline-title focus-animate fleur-de-leah-regular" id="timelineTitle">Wedding Day Flow</h3>
         <ol class="timeline" id="timeline"></ol>
       </div>
 
       <div class="venues-panel reveal">
         <header class="venues-panel-head focus-animate">
           <h3 class="venues-panel-title fleur-de-leah-regular">Venue Details</h3>
-          <p class="venues-panel-lead">Wedding ceremony and reception at the locations below</p>
+          <p class="venues-panel-lead" id="venuesPanelLead">Wedding ceremony and reception at the locations below</p>
         </header>
 
-        <article class="venue-card reveal">
+        <article class="venue-card reveal" id="weddingVenueCard">
           <div class="venue-card-banner">
             <div class="venue-card-photo" id="venuePhoto" role="img" aria-label="Wedding venue"></div>
             <span class="venue-card-tag" data-field="venue.label"></span>
@@ -229,14 +233,15 @@
           </div>
         </article>
 
-        <article class="venue-card venue-card--reception reveal">
-          <div class="venue-card-banner venue-card-banner--plain">
-            <span class="venue-card-icon" aria-hidden="true"><i class="bi bi-stars"></i></span>
+        <article class="venue-card venue-card--reception reveal" id="receptionVenueCard">
+          <div class="venue-card-banner">
+            <div class="venue-card-photo" id="receptionVenuePhoto" role="img" aria-label="Reception venue"></div>
             <span class="venue-card-tag" data-field="receptionVenue.label"></span>
           </div>
           <div class="venue-card-body">
             <div class="venue-card-info">
               <h4 class="venue-card-name" data-field="receptionVenue.name"></h4>
+              <p class="venue-card-event-meta" id="receptionEventMeta" hidden></p>
               <p class="venue-card-address" data-field="receptionVenue.fullAddress"></p>
               <ul class="venue-facts">
                 <li>
@@ -326,9 +331,12 @@
     </p>
   </footer>
 
+  <canvas id="flowerShowerCanvas" class="flower-shower-canvas" aria-hidden="true"></canvas>
+
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="data.js"></script>
+  <script src="interactive.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

@@ -52,6 +52,9 @@
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
+  overflow-x: clip;
+  max-width: 100%;
 }
 
 body {
@@ -66,6 +69,8 @@ body {
     linear-gradient(180deg, var(--beige-warm) 0%, var(--beige) 45%, var(--beige-deep) 100%);
   line-height: 1.65;
   overflow-x: hidden;
+  overflow-x: clip;
+  max-width: 100%;
   padding-top: 0;
   padding-bottom: calc(3.1rem + env(safe-area-inset-bottom, 0px));
 }
@@ -208,6 +213,8 @@ h1, h2, h3, h4 {
   top: 0;
   left: 0;
   right: 0;
+  width: 100%;
+  max-width: 100%;
   z-index: 2500;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -222,6 +229,8 @@ h1, h2, h3, h4 {
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
   pointer-events: none;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 .blessings-bar.is-visible {
@@ -236,6 +245,7 @@ h1, h2, h3, h4 {
   justify-content: center;
   gap: 0.2em;
   min-width: 0;
+  max-width: 100%;
   min-height: 1.65em;
   font-family: var(--font-telugu);
   font-size: clamp(0.62rem, 2.6vw, 0.8rem);
@@ -244,6 +254,8 @@ h1, h2, h3, h4 {
   line-height: 1.5;
   padding: 0.2rem 0;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   opacity: 0;
   transform: translateY(6px);
   transition: opacity 0.45s ease, transform 0.5s var(--ease);
@@ -308,17 +320,129 @@ body.has-blessings {
 }
 
 .gate-panel {
-  width: min(100%, 22rem);
+  width: min(100%, 26rem);
   flex-shrink: 0;
   margin: auto;
   text-align: center;
   color: var(--cream);
-  padding: 1.75rem 1.35rem;
+  padding: 1.15rem 1.1rem 1.45rem;
   border-radius: var(--radius-lg);
   background: rgba(255, 248, 240, 0.06);
   border: 1px solid rgba(228, 160, 26, 0.35);
   backdrop-filter: blur(6px);
   animation: riseIn 0.85s 0.15s var(--ease) both;
+}
+
+.gate-mood {
+  width: 100%;
+  max-width: none;
+  aspect-ratio: 3 / 2;
+  height: auto;
+  margin: 0 auto 1.15rem;
+  border-radius: calc(var(--radius) + 0.15rem);
+  overflow: hidden;
+  border: 2px solid rgba(242, 183, 42, 0.6);
+  box-shadow:
+    0 12px 32px rgba(0, 0, 0, 0.35),
+    0 0 0 1px rgba(255, 248, 240, 0.08);
+  animation: gateMoodIn 0.9s 0.25s var(--ease) both;
+}
+
+.gate-mood img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transform-origin: center;
+  animation: gateMoodFloat 5.5s 1.1s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gate-mood,
+  .gate-mood img {
+    animation: none;
+  }
+}
+
+body.invite-reception .gate {
+  background:
+    linear-gradient(165deg, #2a1a12 0%, #5c3318 42%, #8a5a22 78%, #3d2414 100%);
+}
+
+body.invite-reception .gate-panel {
+  border-color: rgba(255, 200, 120, 0.4);
+  background: rgba(20, 12, 8, 0.28);
+}
+
+body.invite-reception .gate-sanskrit {
+  color: #ffd59a;
+}
+
+body.invite-full .gate-mood {
+  border-color: rgba(242, 183, 42, 0.55);
+}
+
+body.invite-reception .hero-veil {
+  background:
+    linear-gradient(180deg,
+      rgba(42, 26, 18, 0.35) 0%,
+      rgba(60, 32, 18, 0.5) 48%,
+      rgba(30, 16, 10, 0.92) 100%);
+}
+
+body.invite-reception .hero-brand {
+  color: #ffe0b0;
+}
+
+body.invite-reception .when-section {
+  background:
+    radial-gradient(circle at 80% 0%, rgba(228, 160, 26, 0.1), transparent 42%),
+    linear-gradient(180deg, rgba(255, 248, 240, 0.55), rgba(245, 230, 211, 0.7));
+}
+
+body.invite-reception .events-rail {
+  display: none;
+}
+
+body.invite-reception .timeline-wrap {
+  max-width: 34rem;
+  margin: 0 auto 2rem;
+  padding: 1.35rem 1.15rem 1.4rem;
+  background: rgba(255, 250, 242, 0.92);
+  border: 1px solid rgba(228, 160, 26, 0.28);
+}
+
+body.invite-reception .timeline-title {
+  font-size: clamp(1.55rem, 5vw, 2rem);
+  margin-bottom: 0.35rem;
+}
+
+body.invite-reception .timeline {
+  border-left-color: rgba(180, 120, 40, 0.28);
+}
+
+body.invite-reception .timeline-time {
+  color: var(--saffron);
+  font-weight: 700;
+}
+
+body.invite-reception .venues-panel {
+  max-width: 34rem;
+  margin: 0 auto;
+}
+
+body.invite-reception .venues-panel-head {
+  text-align: center;
+  margin-bottom: 1.15rem;
+}
+
+body.invite-reception #receptionVenueCard .venue-card-banner {
+  min-height: 10rem;
+}
+
+body.invite-reception .venue-card-body {
+  padding: 1.35rem 1.2rem 1.4rem;
 }
 
 /* During blessings intro, show hero backdrop but hide hero text */
@@ -354,7 +478,12 @@ body.has-blessings {
 
 @media (max-height: 640px) {
   .gate-panel {
-    padding: 1.15rem 1.1rem;
+    padding: 0.85rem 0.9rem 1.1rem;
+  }
+
+  .gate-mood {
+    margin-bottom: 0.75rem;
+    max-height: 28vh;
   }
 
   .gate-title {
@@ -407,6 +536,27 @@ body.has-blessings {
   transform: translateY(-2px);
 }
 
+.gate-btn.is-disabled,
+.gate-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+  pointer-events: none;
+  background: var(--turmeric);
+}
+
+body.invite-locked .site-nav,
+body.invite-locked .hero,
+body.invite-locked .section,
+body.invite-locked .site-footer,
+body.invite-locked .float-btn,
+body.invite-locked .flower-shower-canvas,
+body.invite-locked .blessings-bar,
+body.invite-locked .blessings-stage,
+body.invite-locked .ornament {
+  display: none !important;
+}
+
 .gate-audio-note {
   margin-top: 1rem;
   font-size: 0.7rem;
@@ -417,6 +567,28 @@ body.has-blessings {
 @keyframes riseIn {
   from { opacity: 0; transform: translateY(22px) scale(0.96); }
   to { opacity: 1; transform: none; }
+}
+
+@keyframes gateMoodIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.92);
+    filter: saturate(0.7);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+}
+
+@keyframes gateMoodFloat {
+  0%, 100% {
+    transform: scale(1.02) translateY(0);
+  }
+  50% {
+    transform: scale(1.07) translateY(-2%);
+  }
 }
 
 @keyframes fadeUp {
@@ -647,17 +819,20 @@ body:not(.has-blessings) .site-nav {
   gap: 0;
   margin: 0 0 0.55rem;
   position: relative;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .name-line {
   display: block;
   font-family: var(--font-names);
-  font-size: clamp(2.85rem, 13vw, 4.75rem);
+  font-size: clamp(2.4rem, 11vw, 4.75rem);
   font-weight: 400;
   font-style: normal;
   line-height: 1.08;
   letter-spacing: 0.03em;
-  padding: 0.06em 0.12em;
+  padding: 0.06em 0.08em;
+  max-width: 100%;
   color: #fff6dc;
   text-shadow:
     0 2px 0 rgba(74, 18, 28, 0.55),
@@ -674,7 +849,7 @@ body:not(.has-blessings) .site-nav {
   opacity: 0;
   transform: scale(0.92);
   transition: opacity 0.55s ease, transform 0.6s var(--ease);
-  overflow: visible;
+  overflow: hidden;
 }
 
 .icon-wheel.is-in {
@@ -844,6 +1019,9 @@ body:not(.has-blessings) .site-nav {
 /* —— Sections + focus motion —— */
 .section {
   padding: 3.25rem 0;
+  max-width: 100%;
+  overflow-x: clip;
+  position: relative;
 }
 
 .section-focus {
@@ -943,6 +1121,8 @@ body:not(.has-blessings) .site-nav {
 .couple-stack {
   display: grid;
   gap: 2.25rem;
+  overflow: hidden;
+  max-width: 100%;
 }
 
 .person {
@@ -1168,11 +1348,16 @@ body:not(.has-blessings) .site-nav {
   padding: 1.15rem;
 }
 
-.venue-card-name {
-  margin: 0 0 0.45rem;
-  font-size: clamp(1.15rem, 3.5vw, 1.45rem);
-  color: var(--maroon);
-  line-height: 1.25;
+.venue-card-event-meta {
+  margin: 0 0 0.65rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--maroon-soft);
+  line-height: 1.45;
+}
+
+.venue-card-event-meta.is-visible {
+  display: block;
 }
 
 .venue-card-address {
@@ -1501,12 +1686,22 @@ body:not(.has-blessings) .site-nav {
   transform: translateY(-1px);
 }
 
+body.invite-reception .venues-panel .venue-card--reception {
+  margin-top: 0;
+}
+
+body.invite-reception #weddingVenueCard {
+  display: none !important;
+}
+
 /* —— Sticky footer —— */
 .site-footer {
   position: fixed;
   left: 0;
   right: 0;
   bottom: 0;
+  width: 100%;
+  max-width: 100%;
   z-index: 2400;
   margin: 0;
   padding:
@@ -1517,6 +1712,8 @@ body:not(.has-blessings) .site-nav {
   background: linear-gradient(90deg, var(--maroon-deep), var(--maroon) 50%, var(--maroon-deep));
   color: var(--cream);
   box-shadow: 0 -4px 14px rgba(74, 18, 28, 0.2);
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .site-footer .dev-credit {
@@ -1543,7 +1740,7 @@ body:not(.has-blessings) .site-nav {
 /* —— Float mute —— */
 .float-btn {
   position: fixed;
-  bottom: calc(3.1rem + env(safe-area-inset-bottom, 0px));
+  bottom: calc(3.1rem + 0.65rem + env(safe-area-inset-bottom, 0px));
   right: max(1rem, env(safe-area-inset-right, 0px));
   z-index: 2500;
   width: 3rem;
