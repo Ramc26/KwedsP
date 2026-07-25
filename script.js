@@ -10,13 +10,13 @@ $(function () {
   var $blessingsStage = $("#blessingsStage");
   var iconTimer = null;
   var heroIcons = [
-    "hero-icons/web/icon1.png",
-    "hero-icons/web/icon2.png",
-    "hero-icons/web/icon3.png",
-    "hero-icons/web/icon4.png",
-    "hero-icons/web/icon5.png",
-    "hero-icons/web/icon6.png",
-    "hero-icons/web/icon7.png"
+    "/hero-icons/web/icon1.png",
+    "/hero-icons/web/icon2.png",
+    "/hero-icons/web/icon3.png",
+    "/hero-icons/web/icon4.png",
+    "/hero-icons/web/icon5.png",
+    "/hero-icons/web/icon6.png",
+    "/hero-icons/web/icon7.png"
   ];
   var iconIndex = 0;
   var iconTurn = 0;
@@ -24,6 +24,18 @@ $(function () {
 
   if (audioEl) {
     audioEl.muted = true;
+  }
+
+  /** Root-absolute paths so /i/... invite URLs still load assets. */
+  function assetUrl(path) {
+    if (!path) return "";
+    if (/^(https?:|data:|blob:)/i.test(path) || path.charAt(0) === "/") return path;
+    return "/" + path;
+  }
+
+  function cssUrl(path) {
+    var u = assetUrl(path);
+    return u ? 'url("' + u + '")' : "";
   }
 
   function resolveInviteCode(d) {
@@ -189,7 +201,7 @@ $(function () {
     var imgPath = m.shareImage || "og-preview.jpg";
     var imgUrl = /^https?:\/\//i.test(imgPath)
       ? imgPath
-      : site + "/" + String(imgPath).replace(/^\//, "");
+      : site + "/" + String(imgPath).replace(/^\//, "") + "?v=2";
     var pageUrl = site ? site + "/" : window.location.href;
     if (d.inviteCode && site) {
       pageUrl = site + "/i/" + d.inviteCode;
@@ -246,7 +258,7 @@ $(function () {
     }
     if (d.gateImage) {
       $("#gateMoodImg")
-        .attr("src", d.gateImage)
+        .attr("src", assetUrl(d.gateImage))
         .attr("alt", d.gateImageAlt || "");
       $("#gateMood").prop("hidden", false);
     } else {
@@ -315,32 +327,32 @@ $(function () {
     if (d.images) {
       if (d.images.hero) {
         $("#heroMedia")
-          .css("background-image", 'url("' + d.images.hero + '")')
+          .css("background-image", cssUrl(d.images.hero))
           .attr(
             "aria-label",
             inviteType === "reception" ? "Reception atmosphere" : "Wedding atmosphere"
           );
       }
       if (d.images.coupleGroom) {
-        $("#groomPhoto").css("background-image", 'url("' + d.images.coupleGroom + '")');
+        $("#groomPhoto").css("background-image", cssUrl(d.images.coupleGroom));
       }
       if (d.images.coupleBride) {
-        $("#bridePhoto").css("background-image", 'url("' + d.images.coupleBride + '")');
+        $("#bridePhoto").css("background-image", cssUrl(d.images.coupleBride));
       }
       if (d.images.venue) {
-        $("#venuePhoto").css("background-image", 'url("' + d.images.venue + '")');
+        $("#venuePhoto").css("background-image", cssUrl(d.images.venue));
       }
       var receptionPhoto =
         inviteType === "reception"
           ? d.gateImage || d.images.receptionMood || (d.images.gallery && d.images.gallery[1])
           : d.images.receptionMood || (d.images.gallery && d.images.gallery[1]);
       if (receptionPhoto) {
-        $("#receptionVenuePhoto").css("background-image", 'url("' + receptionPhoto + '")');
+        $("#receptionVenuePhoto").css("background-image", cssUrl(receptionPhoto));
       }
     }
 
     if (d.music && d.music.src) {
-      $audio.attr("src", d.music.src);
+      $audio.attr("src", assetUrl(d.music.src));
     }
 
     if (d.venue && d.venue.mapsUrl) {
@@ -406,7 +418,7 @@ $(function () {
     images.forEach(function (src, i) {
       $inner.append(
         '<div class="carousel-item ' + (i === 0 ? "active" : "") + '">' +
-          '<img src="' + src + '" alt="Celebration moment ' + (i + 1) + '" loading="lazy">' +
+          '<img src="' + assetUrl(src) + '" alt="Celebration moment ' + (i + 1) + '" loading="lazy">' +
         "</div>"
       );
     });
@@ -416,7 +428,7 @@ $(function () {
     var $grid = $("#familyGrid").empty();
     (d.familyInvites || []).forEach(function (f) {
       var photo = f.image
-        ? '<div class="family-photo" style="background-image:url(\'' + f.image + '\')"></div>'
+        ? '<div class="family-photo" style="background-image:' + cssUrl(f.image) + '"></div>'
         : "";
       $grid.append(
         '<article class="family-item reveal">' +
@@ -626,9 +638,11 @@ $(function () {
 
   function buildIconWheel() {
     var $ring = $("#iconWheelRing").empty();
-    heroIcons.forEach(function (src, i) {
+    var icons =
+      data && data.heroIcons && data.heroIcons.length ? data.heroIcons : heroIcons;
+    icons.forEach(function (src, i) {
       var $face = $(
-        '<div class="icon-face"><img src="' + src + '" alt=""></div>'
+        '<div class="icon-face"><img src="' + assetUrl(src) + '" alt=""></div>'
       );
       if (i === 0) $face.addClass("is-front");
       else $face.css({ opacity: 0, visibility: "hidden" });
@@ -640,7 +654,8 @@ $(function () {
   }
 
   function startIconCycle() {
-    var n = heroIcons.length || 7;
+    var $faces = $("#iconWheelRing .icon-face");
+    var n = $faces.length || heroIcons.length || 7;
     if (iconTimer) clearInterval(iconTimer);
     iconTimer = setInterval(function () {
       var $faces = $("#iconWheelRing .icon-face");
