@@ -14,8 +14,9 @@
   <meta name="application-name" content="K♥P">
 
   <link rel="canonical" id="canonicalUrl" href="https://kwedsp.rambuilds.in/i/e4p8n1">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="/og-reception.jpg">
+  <link rel="icon" href="/favicon.svg?v=2" type="image/svg+xml">
+  <link rel="icon" href="/favicon-32.png?v=2" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2">
 
   <!-- Open Graph / Facebook / WhatsApp (must match live host + image under ~300KB) -->
   <meta property="og:type" content="website">
@@ -62,7 +63,7 @@
       <p class="gate-telugu" data-field="welcome.telugu"></p>
       <p class="gate-greeting" data-field="welcome.greeting"></p>
       <button type="button" id="openInvitation" class="gate-btn cal-sans-regular">Enter Invitation</button>
-      <p class="gate-audio-note">Audio starts muted · tap the speaker to unmute</p>
+      <p class="gate-audio-note">Music plays when you enter · tap the speaker to mute</p>
     </div>
   </div>
 
@@ -86,9 +87,9 @@
     <span class="bless-slot" data-slot="right"></span>
   </div>
 
-  <audio id="bgAudio" loop preload="none" muted></audio>
-  <button type="button" id="muteBtn" class="float-btn float-mute d-none" aria-label="Unmute audio">
-    <i class="bi bi-volume-mute-fill"></i>
+  <audio id="bgAudio" loop preload="auto"></audio>
+  <button type="button" id="muteBtn" class="float-btn float-mute d-none" aria-label="Mute audio">
+    <i class="bi bi-volume-up-fill"></i>
   </button>
 
   <nav class="site-nav" id="siteNav" aria-label="Primary">
@@ -105,6 +106,9 @@
     <div class="hero-veil"></div>
     <div class="hero-inner">
       <div class="hero-glitter" id="heroGlitter" aria-hidden="true"></div>
+      <div class="hero-emblem hero-anim" id="heroEmblem">
+        <img src="/images/Thirunamam.png" alt="Thirunamam — Sri Venkateswara &amp; Padmavathi" width="220" height="220" decoding="async">
+      </div>
       <p class="hero-brand hero-anim fleur-de-leah-regular" data-field="brand"></p>
       <h1 class="hero-names">
         <span class="name-line hero-anim ewert-regular" data-field="groom.displayName"></span>

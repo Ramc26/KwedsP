@@ -685,33 +685,37 @@ $(function () {
   function playHeroSequence() {
     buildGlitter();
     $("#heroGlitter").addClass("is-on");
-    $(".hero-brand").addClass("is-in");
+    $("#heroEmblem").addClass("is-in");
 
     if (window.KwedsInteractive && window.KwedsInteractive.playRosePetals) {
       window.KwedsInteractive.playRosePetals();
     }
 
     setTimeout(function () {
+      $(".hero-brand").addClass("is-in");
+    }, 280);
+
+    setTimeout(function () {
       $(".hero-names .name-line").first().addClass("is-in");
-    }, 450);
+    }, 650);
 
     setTimeout(function () {
       buildIconWheel();
       $("#iconWheel").addClass("is-in");
-    }, 850);
+    }, 1050);
 
     setTimeout(function () {
       $(".hero-names .name-line").last().addClass("is-in");
-    }, 1200);
+    }, 1400);
 
     setTimeout(function () {
       $(".hero-meta, .countdown, .cal-btn").addClass("is-in");
       startIconCycle();
-    }, 1700);
+    }, 1850);
 
     setTimeout(function () {
       $("#heroGlitter").removeClass("is-on");
-    }, 3800);
+    }, 4000);
   }
 
   function flyBlessingToSlot($el, done) {
@@ -840,9 +844,23 @@ $(function () {
     $mute.removeClass("d-none");
 
     if (audioEl && audioEl.src) {
-      audioEl.muted = true;
-      muted = true;
-      audioEl.play().catch(function () {});
+      muted = false;
+      audioEl.muted = false;
+      audioEl.volume = 0.85;
+      audioEl.play().catch(function () {
+        muted = true;
+        audioEl.muted = true;
+        $mute
+          .attr("aria-label", "Unmute audio")
+          .find("i")
+          .removeClass("bi-volume-up-fill")
+          .addClass("bi-volume-mute-fill");
+      });
+      $mute
+        .attr("aria-label", "Mute audio")
+        .find("i")
+        .removeClass("bi-volume-mute-fill")
+        .addClass("bi-volume-up-fill");
     }
 
     playIntro();
@@ -853,6 +871,9 @@ $(function () {
   $mute.on("click", function () {
     muted = !muted;
     audioEl.muted = muted;
+    if (!muted) {
+      audioEl.play().catch(function () {});
+    }
     $(this)
       .attr("aria-label", muted ? "Unmute audio" : "Mute audio")
       .find("i")

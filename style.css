@@ -751,7 +751,7 @@ body:not(.has-blessings) .site-nav {
   z-index: 2;
   width: 100%;
   max-width: 34rem;
-  padding: 4.75rem 1.15rem 3.25rem;
+  padding: 3.1rem 1.15rem 3.25rem;
   margin: 0 auto;
   text-align: center;
   display: flex;
@@ -800,6 +800,24 @@ body:not(.has-blessings) .site-nav {
   opacity: 1;
   transform: none;
   filter: none;
+}
+
+.hero-emblem {
+  width: clamp(7.25rem, 44vw, 9.5rem);
+  margin: -0.15rem 0 0.55rem;
+  line-height: 0;
+  filter: drop-shadow(0 8px 22px rgba(0, 0, 0, 0.45));
+}
+
+.hero-emblem img {
+  display: block;
+  width: 100%;
+  height: auto;
+  /* Knock out the solid black plate on the dark hero */
+  mix-blend-mode: screen;
+  -webkit-user-drag: none;
+  user-select: none;
+  pointer-events: none;
 }
 
 .hero-brand {
@@ -1921,6 +1939,11 @@ body.is-locked {
   .hero-inner {
     max-width: 48rem;
     padding: 6.5rem 1.5rem 5rem;
+  }
+
+  .hero-emblem {
+    width: 8.75rem;
+    margin: 0 0 0.85rem;
   }
 }
 

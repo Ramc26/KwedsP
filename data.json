@@ -49,6 +49,7 @@
       "venuesSummary": "Wedding — Seethanagaram · Reception — Neeladriraopeta",
       "whenKicker": "Celebrations",
       "whenTitle": "When & Where",
+      "timelineTitle": "Wedding Day Flow",
       "venuesPanelLead": "Wedding ceremony and reception at the locations below",
       "showWeddingVenue": true,
       "showTimeline": true,
@@ -90,6 +91,7 @@
       "venuesSummary": "Come for dinner, smiles, and a little celebration with us.",
       "whenKicker": "What to expect",
       "whenTitle": "The evening flow",
+      "timelineTitle": "Reception Flow",
       "venuesPanelLead": "Where we’ll be",
       "showWeddingVenue": false,
       "showTimeline": true,
@@ -203,8 +205,8 @@
     "thanksBody": "We eagerly await your gracious presence and blessings."
   },
   "music": {
-    "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
-    "label": "Temple Bells · Veena · Flute"
+    "src": "images/Pagebgs.mp3",
+    "label": "Wedding background music"
   },
   "images": {
     "hero": "images/hero.jpg?v=3",
@@ -387,17 +389,17 @@
     "brideSide": {
       "label": "Bride Side",
       "name": "Chiravuri Family",
-      "phone": "+91 XXXXX XXXXX",
-      "phoneHref": "tel:+91XXXXXXXXXX",
-      "whatsapp": "https://wa.me/91XXXXXXXXXX",
+      "phone": "+91 99635 94960",
+      "phoneHref": "tel:+919963594960",
+      "whatsapp": "https://wa.me/919963594960",
       "location": "Seethanagaram"
     },
     "groomSide": {
       "label": "Groom Side",
       "name": "Vuddagiri Family",
-      "phone": "+91 XXXXX XXXXX",
-      "phoneHref": "tel:+91XXXXXXXXXX",
-      "whatsapp": "https://wa.me/91XXXXXXXXXX",
+      "phone": "+91 98482 23112",
+      "phoneHref": "tel:+919848223112",
+      "whatsapp": "https://wa.me/919848223112",
       "location": "Jaggampeta"
     }
   }
