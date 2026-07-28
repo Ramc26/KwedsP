@@ -16,7 +16,7 @@
   --radius-lg: 1.75rem;
   --radius-pill: 999px;
   --font-display: "Fraunces", Georgia, serif;
-  --font-names: "Ewert", serif;
+  --font-names: "Cinzel", "Fraunces", Georgia, serif;
   --font-script: "Fleur De Leah", cursive;
   --font-ui: "Cal Sans", sans-serif;
   --font-body: "Figtree", sans-serif;
@@ -838,25 +838,78 @@ body:not(.has-blessings) .site-nav {
   margin: 0 0 0.55rem;
   position: relative;
   max-width: 100%;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .name-line {
-  display: block;
+  position: relative;
+  display: inline-block;
   font-family: var(--font-names);
-  font-size: clamp(2.4rem, 11vw, 4.75rem);
-  font-weight: 400;
+  font-size: clamp(2.35rem, 9.5vw, 4.15rem);
+  font-weight: 600;
   font-style: normal;
-  line-height: 1.08;
-  letter-spacing: 0.03em;
-  padding: 0.06em 0.08em;
+  line-height: 1.15;
+  letter-spacing: 0.14em;
+  padding: 0.12em 1.25em 0.18em;
   max-width: 100%;
-  color: #fff6dc;
-  text-shadow:
-    0 2px 0 rgba(74, 18, 28, 0.55),
-    0 4px 14px rgba(0, 0, 0, 0.55),
-    0 0 24px rgba(242, 183, 42, 0.35);
+  text-transform: none;
+  color: #ffe9b0;
+  background-image: linear-gradient(
+    185deg,
+    #fff6dc 0%,
+    #ffe08a 28%,
+    #e4a01a 52%,
+    #fff0c2 72%,
+    #c97808 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
+
+.name-line.hero-anim.is-in {
+  filter:
+    drop-shadow(0 1px 0 rgba(74, 18, 28, 0.55))
+    drop-shadow(0 3px 10px rgba(0, 0, 0, 0.4))
+    drop-shadow(0 0 18px rgba(242, 183, 42, 0.28));
+}
+
+.name-line::before,
+.name-line::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 0.7em;
+  height: 1px;
+  transform: translateY(-50%);
+  background: linear-gradient(90deg, transparent, rgba(242, 183, 42, 0.9), transparent);
+  pointer-events: none;
+  opacity: 0.9;
+}
+
+.name-line::before {
+  right: calc(100% - 0.55em);
+}
+
+.name-line::after {
+  left: calc(100% - 0.55em);
+}
+
+@supports not ((-webkit-background-clip: text) or (background-clip: text)) {
+  .name-line {
+    color: #ffe08a;
+    background-image: none;
+    -webkit-text-fill-color: unset;
+    text-shadow:
+      0 2px 0 rgba(74, 18, 28, 0.55),
+      0 4px 14px rgba(0, 0, 0, 0.45);
+  }
+
+  .name-line.hero-anim.is-in {
+    filter: none;
+  }
+}
+
 
 /* Single icon — 3D spin RTL, never shows neighbors */
 .icon-wheel {
