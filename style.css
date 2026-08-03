@@ -1567,12 +1567,27 @@ body:not(.has-blessings) .site-nav {
   font-size: 0.92rem;
 }
 
+.timelines-rail {
+  display: grid;
+  gap: 1.15rem;
+  margin-bottom: 2.25rem;
+}
+
+.timelines-rail .timeline-wrap {
+  margin-bottom: 0;
+  height: 100%;
+}
+
 .timeline-wrap {
   margin-bottom: 2.25rem;
   padding: 1.25rem 1rem;
   border-radius: var(--radius-lg);
   background: rgba(255, 248, 240, 0.55);
   border: 1px solid rgba(228, 160, 26, 0.22);
+}
+
+.timeline-wrap[hidden] {
+  display: none !important;
 }
 
 .timeline-title {
@@ -1988,6 +2003,12 @@ body.is-locked {
 
   .events-rail {
     grid-template-columns: 1fr 1fr;
+    gap: 1.15rem;
+  }
+
+  .timelines-rail.has-dual {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
     gap: 1.15rem;
   }
 

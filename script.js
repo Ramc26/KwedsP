@@ -290,6 +290,18 @@ $(function () {
     $("#weddingVenueCard").toggle(!!d.showWeddingVenue);
     $("#timelineWrap").toggle(!!d.showTimeline && !!(d.timeline && d.timeline.length));
 
+    var showReceptionFlow =
+      inviteType === "full" &&
+      !!(d.receptionTimeline && d.receptionTimeline.length);
+    $("#receptionTimelineTitle").text(
+      (d.inviteModes &&
+        d.inviteModes.reception &&
+        d.inviteModes.reception.timelineTitle) ||
+        "Reception Flow"
+    );
+    $("#receptionTimelineWrap").prop("hidden", !showReceptionFlow);
+    $("#timelinesRail").toggleClass("has-dual", showReceptionFlow);
+
     var $rxMeta = $("#receptionEventMeta");
     if (inviteType === "reception" && d.celebrations && d.celebrations[0]) {
       var ev = d.celebrations[0];
@@ -415,6 +427,19 @@ $(function () {
         "</li>"
       );
     });
+
+    var $rx = $("#receptionTimelineList").empty();
+    if (inviteType === "full" && d.receptionTimeline && d.receptionTimeline.length) {
+      d.receptionTimeline.forEach(function (item) {
+        $rx.append(
+          '<li class="' + (item.highlight ? "is-highlight" : "") + '">' +
+            '<div class="timeline-time">' + item.time + "</div>" +
+            "<h4>" + (item.icon || "") + " " + item.title + "</h4>" +
+            "<p>" + item.description + "</p>" +
+          "</li>"
+        );
+      });
+    }
   }
 
   function buildGallery(d) {
