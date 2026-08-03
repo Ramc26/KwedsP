@@ -103,6 +103,10 @@ window.WEDDING_DATA = {
       "gateImage": "recep-preview.png",
       "gateImageAlt": "Dinner reception invitation",
       "shareImage": "og-reception.jpg",
+      "music": {
+        "src": "images/receptionbgs.mp3",
+        "label": "Reception background music"
+      },
       "welcome": {
         "sanskrit": "शुभ स्वागतम्",
         "title": "Swagatam",
@@ -219,9 +223,7 @@ window.WEDDING_DATA = {
       "images/gallery-pot2.jpeg",
       "images/gallery-pot3.jpeg",
       "images/gallery-pot4.jpeg",
-      "images/gallery-pot5.jpeg",
-      "images/gallery3.jpg",
-      "images/gallery4.jpg"
+      "images/gallery-pot5.jpeg"
     ],
     "receptionMood": "recep-preview.png"
   },
@@ -314,12 +316,6 @@ window.WEDDING_DATA = {
     }
   ],
   "timeline": [
-    {
-      "time": "11:00 AM",
-      "title": "Guest Arrival",
-      "description": "Warm welcome of our beloved guests.",
-      "icon": "❀"
-    },
     {
       "time": "05:00 PM",
       "title": "Panakala Kavidi Ceremony",

@@ -134,6 +134,9 @@ $(function () {
       d.meta = d.meta || {};
       d.meta.shareImage = mode.shareImage;
     }
+    if (mode.music) {
+      d.music = $.extend({}, d.music || {}, mode.music);
+    }
     if (mode.heroImage) {
       d.images = $.extend({}, d.images || {});
       d.images.hero = mode.heroImage;
