@@ -341,14 +341,18 @@ $(function () {
         $("#bridePhoto").css("background-image", cssUrl(d.images.coupleBride));
       }
       if (d.images.venue) {
-        $("#venuePhoto").css("background-image", cssUrl(d.images.venue));
+        $("#venuePhoto")
+          .css("background-image", cssUrl(d.images.venue))
+          .attr("data-full-src", assetUrl(d.images.venue));
       }
       var receptionPhoto =
-        inviteType === "reception"
-          ? d.gateImage || d.images.receptionMood || (d.images.gallery && d.images.gallery[1])
-          : d.images.receptionMood || (d.images.gallery && d.images.gallery[1]);
+        d.images.receptionVenue ||
+        d.images.receptionMood ||
+        (d.images.gallery && d.images.gallery[1]);
       if (receptionPhoto) {
-        $("#receptionVenuePhoto").css("background-image", cssUrl(receptionPhoto));
+        $("#receptionVenuePhoto")
+          .css("background-image", cssUrl(receptionPhoto))
+          .attr("data-full-src", assetUrl(receptionPhoto));
       }
     }
 
@@ -417,11 +421,18 @@ $(function () {
     var images = (d.images && d.images.gallery) || [];
     var $inner = $("#galleryInner").empty();
     images.forEach(function (src, i) {
-      $inner.append(
+      var $item = $(
         '<div class="carousel-item ' + (i === 0 ? "active" : "") + '">' +
           '<img src="' + assetUrl(src) + '" alt="Celebration moment ' + (i + 1) + '" loading="lazy">' +
         "</div>"
       );
+      var $img = $item.find("img");
+      $img.on("load", function () {
+        if (this.naturalWidth && this.naturalHeight) {
+          this.style.aspectRatio = this.naturalWidth + " / " + this.naturalHeight;
+        }
+      });
+      $inner.append($item);
     });
   }
 
@@ -596,6 +607,38 @@ $(function () {
     var items = section.querySelectorAll(".focus-animate");
     items.forEach(function (el, i) {
       el.style.setProperty("--focus-i", String(i));
+    });
+  }
+
+  function initImageLightbox() {
+    var $lb = $("#imageLightbox");
+    var $img = $("#imageLightboxImg");
+    if (!$lb.length) return;
+
+    function openLightbox(src, alt) {
+      if (!src) return;
+      $img.attr("src", src).attr("alt", alt || "Venue photo");
+      $lb.prop("hidden", false).attr("aria-hidden", "false").addClass("is-open");
+      $("body").addClass("lightbox-open");
+    }
+
+    function closeLightbox() {
+      $lb.prop("hidden", true).attr("aria-hidden", "true").removeClass("is-open");
+      $("body").removeClass("lightbox-open");
+      $img.attr("src", "").attr("alt", "");
+    }
+
+    $(document).on("click", ".venue-card-photo.is-lightbox", function () {
+      var src = $(this).attr("data-full-src");
+      openLightbox(src, $(this).attr("aria-label") || "Venue photo");
+    });
+
+    $("#imageLightboxClose").on("click", closeLightbox);
+    $lb.on("click", function (e) {
+      if (e.target === this) closeLightbox();
+    });
+    $(document).on("keydown", function (e) {
+      if (e.key === "Escape" && $lb.hasClass("is-open")) closeLightbox();
     });
   }
 
@@ -882,6 +925,7 @@ $(function () {
   });
 
   initNavBehavior();
+  initImageLightbox();
 
   if (window.WEDDING_DATA) {
     renderAll(window.WEDDING_DATA);

@@ -207,7 +207,7 @@
 
         <article class="venue-card reveal" id="weddingVenueCard">
           <div class="venue-card-banner">
-            <div class="venue-card-photo" id="venuePhoto" role="img" aria-label="Wedding venue"></div>
+            <button type="button" class="venue-card-photo is-lightbox" id="venuePhoto" aria-label="View full wedding venue photo"></button>
             <span class="venue-card-tag" data-field="venue.label"></span>
           </div>
           <div class="venue-card-body">
@@ -240,7 +240,7 @@
 
         <article class="venue-card venue-card--reception reveal" id="receptionVenueCard">
           <div class="venue-card-banner">
-            <div class="venue-card-photo" id="receptionVenuePhoto" role="img" aria-label="Reception venue"></div>
+            <button type="button" class="venue-card-photo is-lightbox" id="receptionVenuePhoto" aria-label="View full reception venue photo"></button>
             <span class="venue-card-tag" data-field="receptionVenue.label"></span>
           </div>
           <div class="venue-card-body">
@@ -337,6 +337,13 @@
   </footer>
 
   <canvas id="flowerShowerCanvas" class="flower-shower-canvas" aria-hidden="true"></canvas>
+
+  <div id="imageLightbox" class="image-lightbox" hidden aria-hidden="true">
+    <button type="button" class="image-lightbox-close" id="imageLightboxClose" aria-label="Close image">
+      <i class="bi bi-x-lg" aria-hidden="true"></i>
+    </button>
+    <img id="imageLightboxImg" class="image-lightbox-img" alt="">
+  </div>
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

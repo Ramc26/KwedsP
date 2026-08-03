@@ -3,7 +3,7 @@
   "meta": {
     "tabTitle": "K♥P",
     "shareHeadline": "Kamesh & Prasanna — Wedding & Reception",
-    "tagline": "You're invited to our wedding (30 Aug 2026, Muhurtham 11:29 AM, Seethanagaram) and reception (2 Sep 2026, 7:00 PM, Neeladriraopeta).",
+    "tagline": "You're invited to our wedding (30 Aug 2026, Muhurtham 11:29 PM, Seethanagaram) and reception (2 Sep 2026, 7:00 PM, Neeladriraopeta).",
     "shareImage": "og-wedding.jpg",
     "siteName": "Kamesh & Prasanna Wedding",
     "locale": "en_IN",
@@ -24,10 +24,10 @@
     "Andhra Pradesh",
     "Wedding Invitation"
   ],
-  "datetime": "2026-08-30T11:29:00+05:30",
+  "datetime": "2026-08-30T23:29:00+05:30",
   "dateLabel": "30 August 2026",
   "dayLabel": "Sunday",
-  "muhurtham": "11:29 AM",
+  "muhurtham": "11:29 PM",
   "venuesSummary": "Wedding — Seethanagaram · Reception — Neeladriraopeta",
   "inviteModes": {
     "default": null,
@@ -39,13 +39,13 @@
     "full": {
       "meta": {
         "shareHeadline": "Kamesh & Prasanna — Wedding & Reception",
-        "tagline": "You're invited to our wedding (30 Aug 2026, Muhurtham 11:29 AM, Seethanagaram) and reception (2 Sep 2026, 7:00 PM, Neeladriraopeta)."
+        "tagline": "You're invited to our wedding (30 Aug 2026, Muhurtham 11:29 PM, Seethanagaram) and reception (2 Sep 2026, 7:00 PM, Neeladriraopeta)."
       },
       "description": "Join us for the wedding ceremony and reception of Kamesh and Prasanna — Sri Rama Kalyana Vaibhavam.",
       "brand": "Sri Rama Kalyana Vaibhavam",
-      "datetime": "2026-08-30T11:29:00+05:30",
+      "datetime": "2026-08-30T23:29:00+05:30",
       "dateLabel": "30 August 2026",
-      "muhurtham": "11:29 AM",
+      "muhurtham": "11:29 PM",
       "venuesSummary": "Wedding — Seethanagaram · Reception — Neeladriraopeta",
       "whenKicker": "Celebrations",
       "whenTitle": "When & Where",
@@ -212,8 +212,14 @@
     "hero": "images/hero.jpg?v=3",
     "coupleGroom": "images/groom.jpg",
     "coupleBride": "images/bride.jpg",
-    "venue": "images/venue.jpg",
+    "venue": "images/venue-wed.png",
+    "receptionVenue": "images/venue-recp.png",
     "gallery": [
+      "images/gallery-pot1.jpeg",
+      "images/gallery-pot2.jpeg",
+      "images/gallery-pot3.jpeg",
+      "images/gallery-pot4.jpeg",
+      "images/gallery-pot5.jpeg",
       "images/gallery1.jpg",
       "images/gallery2.jpg",
       "images/gallery3.jpg",
@@ -263,7 +269,7 @@
   "groom": {
     "fullName": "Mr. Veera Venkata Sathya Kameshwara Rao",
     "displayName": "Kamesh",
-    "father": "Sri Vuddagiri Subbarao Rao",
+    "father": "Sri Vuddagiri Subbarao",
     "mother": "Smt. Venkata Maha Lakshmi",
     "family": "Vuddagiri Family",
     "role": "Son of",
@@ -273,7 +279,7 @@
     "fullName": "Ms. Lakshmi Prasanna",
     "displayName": "Prasanna",
     "father": "Sri Chiravuri Srinivas",
-    "mother": "Smt. Kotamaamba (Manju)",
+    "mother": "Smt. Kotamamba (Manju)",
     "family": "Chiravuri Family",
     "role": "Daughter of",
     "education": ""
@@ -283,7 +289,7 @@
       "title": "Wedding Ceremony",
       "date": "30 August 2026",
       "day": "Sunday",
-      "time": "Muhurtham 11:29 AM",
+      "time": "Muhurtham 11:29 PM",
       "description": "Sacred Telugu wedding rites, mangalasutram, and blessings. We request the honour of your presence.",
       "location": "Raju Gari Gardens Kalyana Mandapam, Seethanagaram, Andhra Pradesh 533287",
       "mapsUrl": "https://maps.app.goo.gl/NZWfCCQxr7DXunZJ8",
@@ -312,34 +318,40 @@
   "timeline": [
     {
       "time": "11:00 AM",
-      "title": "Guests Arrival",
+      "title": "Guest Arrival",
       "description": "Warm welcome of our beloved guests.",
       "icon": "❀"
     },
     {
-      "time": "11:15 AM",
-      "title": "Bride & Groom Procession",
-      "description": "The ceremonial procession of the bride and groom.",
-      "icon": "♫"
-    },
-    {
-      "time": "11:29 AM",
-      "title": "Auspicious Muhurtham",
-      "description": "Mangala Sutra Dharana",
-      "highlight": true,
-      "icon": "ॐ"
-    },
-    {
-      "time": "12:15 PM",
-      "title": "Akshintalu",
-      "description": "Blessings from elders and loved ones.",
+      "time": "05:00 PM",
+      "title": "Panakala Kavidi Ceremony",
+      "description": "Bride and groom Panakala Kavidi ceremony.",
       "icon": "✧"
     },
     {
-      "time": "01:00 PM",
-      "title": "Traditional Lunch",
+      "time": "06:00 PM",
+      "title": "Bride & Groom Entrance",
+      "description": "The ceremonial entrance of the bride and groom.",
+      "icon": "♫"
+    },
+    {
+      "time": "07:00 PM",
+      "title": "Groom Upanayanam Ceremony",
+      "description": "Sacred Upanayanam ceremony for the groom.",
+      "icon": "ॐ"
+    },
+    {
+      "time": "08:00 PM",
+      "title": "Dinner",
       "description": "Join us for a traditional wedding feast.",
       "icon": "❀"
+    },
+    {
+      "time": "11:29 PM",
+      "title": "Shubha Muhurtham",
+      "description": "Mangala Sutra Dharana — the auspicious wedding muhurtham.",
+      "highlight": true,
+      "icon": "ॐ"
     }
   ],
   "receptionTimeline": [
@@ -372,14 +384,14 @@
   "familyInvites": [
     {
       "side": "Groom's Parents",
-      "names": "Sri Vuddagiri Subbarao Rao & Smt. Venkata Maha Lakshmi",
+      "names": "Sri Vuddagiri Subbarao & Smt. Venkata Maha Lakshmi",
       "message": "We invite you to join us in celebrating this joyous occasion.",
       "family": "Vuddagiri Family",
       "image": "images/family-groom.jpg?v=2"
     },
     {
       "side": "Bride's Parents",
-      "names": "Sri Chiravuri Srinivas & Smt. Kotamaamba (Manju)",
+      "names": "Sri Chiravuri Srinivas & Smt. Kotamamba (Manju)",
       "message": "We look forward to sharing this special day with you.",
       "family": "Chiravuri Family",
       "image": "images/family-bride.jpg?v=2"
