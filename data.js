@@ -149,7 +149,7 @@ window.WEDDING_DATA = {
     ],
     "fullAddress": "Subhamasthu Function Hall, beside NH 16, Neeladriraopeta, Andhra Pradesh 533435",
     "mapsUrl": "https://maps.app.goo.gl/p7vcNGpCoNY4Ru677",
-    "mapsEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6433.2257396337745!2d82.03474684903135!3d17.170949131049756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a37778773fa79cd%3A0xa56fe47922e7d055!2sNeeladriraopeta!5e0!3m2!1sen!2sin!4v1784306549877!5m2!1sen!2sin"
+    "mapsEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3742.464282157563!2d82.04279067507794!3d17.17249688367849!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3779b0c9e7882d%3A0x8414aaf23e07f473!2sSubhamasthu%20Function%20Hall!5e1!3m2!1sen!2sin!4v1785825636342!5m2!1sen!2sin"
   },
   "blessings": [
     "|| శ్రీ రస్తు ||",
