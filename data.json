@@ -1,155 +1,113 @@
 {
   "siteUrl": "https://kwedsp.rambuilds.in",
   "meta": {
-    "tabTitle": "K♥P",
-    "shareHeadline": "Kamesh & Prasanna — Wedding & Reception",
-    "tagline": "You're invited to our wedding (30 Aug 2026, Muhurtham 11:29 PM, Seethanagaram) and reception (2 Sep 2026, 7:00 PM, Neeladriraopeta).",
+    "tabTitle": "R♥B",
+    "shareHeadline": "Ruthwik & Balasree — Wedding & Reception",
+    "tagline": "18 Dec — wedding at Jaggampeta · 20 Dec — post-wedding reception in Eluru (groom's family).",
     "shareImage": "og-wedding.jpg",
-    "siteName": "Kamesh & Prasanna Wedding",
+    "siteName": "Ruthwik & Balasree Wedding",
     "locale": "en_IN",
     "themeColor": "#6b1d2a"
   },
-  "brand": "Sri Rama Kalyana Vaibhavam",
+  "brand": "",
   "pageTitle": "శుభ వివాహం",
-  "title": "Kamesh & Prasanna | Sri Rama Kalyana Vaibhavam",
-  "description": "Join us for the wedding ceremony and reception of Kamesh and Prasanna — Sri Rama Kalyana Vaibhavam.",
+  "title": "Ruthwik & Balasree",
+  "description": "Join Ruthwik and Balasree for the wedding at Jaggampeta and a post-wedding reception in Eluru.",
   "keywords": [
     "Telugu Wedding",
     "Hindu Wedding",
-    "Kalyana Vaibhavam",
-    "Kamesh",
-    "Prasanna",
-    "Seethanagaram",
-    "Neeladriraopeta",
+    "Ruthwik",
+    "Balasree",
+    "Jaggampeta",
+    "Parinaya Function Hall",
+    "Eluru",
     "Andhra Pradesh",
     "Wedding Invitation"
   ],
-  "datetime": "2026-08-30T23:29:00+05:30",
-  "dateLabel": "30 August 2026",
-  "dayLabel": "Sunday",
-  "muhurtham": "11:29 PM",
-  "venuesSummary": "Wedding — Seethanagaram · Reception — Neeladriraopeta",
+  "datetime": "2026-12-19T03:18:00+05:30",
+  "dateLabel": "18 December 2026",
+  "dayLabel": "Friday",
+  "muhurtham": "Evening reception · Muhurtham 03:18 AM",
+  "venuesSummary": "18 Dec — Jaggampeta · 20 Dec evening — post-wedding reception, Eluru",
+  "showReceptionVenue": true,
+  "receptionTimelineTitle": "Post-Wedding Reception · Eluru",
   "inviteModes": {
     "default": null,
     "param": "c",
     "codes": {
       "w7k2m9": "full",
-      "e4p8n1": "reception"
+      "e4p8n1": "full"
     },
     "full": {
       "meta": {
-        "shareHeadline": "Kamesh & Prasanna — Wedding & Reception",
-        "tagline": "You're invited to our wedding (30 Aug 2026, Muhurtham 11:29 PM, Seethanagaram) and reception (2 Sep 2026, 7:00 PM, Neeladriraopeta)."
+        "shareHeadline": "Ruthwik & Balasree — Wedding & Reception",
+        "tagline": "18 Dec — wedding at Jaggampeta · 20 Dec — post-wedding reception in Eluru (groom's family)."
       },
-      "description": "Join us for the wedding ceremony and reception of Kamesh and Prasanna — Sri Rama Kalyana Vaibhavam.",
-      "brand": "Sri Rama Kalyana Vaibhavam",
-      "datetime": "2026-08-30T23:29:00+05:30",
-      "dateLabel": "30 August 2026",
-      "muhurtham": "11:29 PM",
-      "venuesSummary": "Wedding — Seethanagaram · Reception — Neeladriraopeta",
+      "description": "Join Ruthwik and Balasree for the wedding at Jaggampeta and a post-wedding reception in Eluru on behalf of the groom's family.",
+      "brand": "",
+      "datetime": "2026-12-19T03:18:00+05:30",
+      "dateLabel": "18 December 2026",
+      "muhurtham": "Evening reception · Muhurtham 03:18 AM",
+      "venuesSummary": "18 Dec — Jaggampeta · 20 Dec evening — post-wedding reception, Eluru",
       "whenKicker": "Celebrations",
       "whenTitle": "When & Where",
-      "timelineTitle": "Wedding Day Flow",
-      "venuesPanelLead": "Wedding ceremony and reception at the locations below",
+      "timelineTitle": "Celebration Flow · 18 December",
+      "receptionTimelineTitle": "Post-Wedding Reception · Eluru",
+      "venuesPanelLead": "Wedding at Parinaya, Jaggampeta · Post-wedding reception in Eluru (groom's family)",
       "showWeddingVenue": true,
+      "showReceptionVenue": true,
       "showTimeline": true,
       "calendarTitleSuffix": "Wedding & Reception",
       "calendarLocationKey": "venue",
       "gateBtn": "Enter Invitation",
       "heroImage": "images/hero.jpg?v=3",
       "gateImage": "preview.png",
-      "gateImageAlt": "Kamesh and Prasanna wedding invitation",
+      "gateImageAlt": "Ruthwik and Balasree wedding invitation",
       "shareImage": "og-wedding.jpg",
       "welcome": {
         "sanskrit": "शुभ विवाह",
         "title": "Swagatam",
         "telugu": "స్వాగతం",
-        "greeting": "With divine blessings, you are invited to our sacred wedding ceremony and the joyous reception that follows."
+        "greeting": "With divine blessings, you are invited to our wedding celebration at Jaggampeta and the post-wedding reception in Eluru hosted on behalf of the groom."
       },
       "invitation": {
         "title": "With Gratitude",
         "paragraphs": [
-          "Your presence at the muhurtham and reception will fill these sacred moments with love.",
+          "Your presence through the reception, dinner, and muhurtham will mean the world to us.",
           "We seek your blessings as we begin life together."
         ]
       },
       "familyMessages": {
-        "groom": "Please join us for the wedding muhurtham and the reception evening.",
-        "bride": "We would be honoured to have you with us for the wedding and reception."
-      }
-    },
-    "reception": {
-      "meta": {
-        "shareHeadline": "Kamesh & Prasanna — Reception Evening",
-        "tagline": "An evening reception · 02 September 2026 · 07:00 PM onwards · Subhamasthu Function Hall, Neeladriraopeta."
-      },
-      "description": "Join Kamesh and Prasanna for a warm reception evening at Subhamasthu Function Hall, Neeladriraopeta.",
-      "brand": "Reception Evening",
-      "datetime": "2026-09-02T19:00:00+05:30",
-      "dateLabel": "02 September 2026",
-      "muhurtham": "07:00 PM onwards",
-      "venuesSummary": "Come for dinner, smiles, and a little celebration with us.",
-      "whenKicker": "What to expect",
-      "whenTitle": "The evening flow",
-      "timelineTitle": "Reception Flow",
-      "venuesPanelLead": "Where we’ll be",
-      "showWeddingVenue": false,
-      "showTimeline": true,
-      "useReceptionTimeline": true,
-      "calendarTitleSuffix": "Reception Evening",
-      "calendarLocationKey": "receptionVenue",
-      "gateBtn": "Enter Reception",
-      "heroImage": "images/gallery2.jpg",
-      "gateImage": "recep-preview.png",
-      "gateImageAlt": "Dinner reception invitation",
-      "shareImage": "og-reception.jpg",
-      "music": {
-        "src": "images/receptionbgs.mp3",
-        "label": "Reception background music"
-      },
-      "welcome": {
-        "sanskrit": "शुभ स्वागतम्",
-        "title": "Swagatam",
-        "telugu": "స్వాగతం",
-        "greeting": "An evening of music, dinner, and warm wishes. You are invited to celebrate with Kamesh, Prasanna, and our families."
-      },
-      "invitation": {
-        "title": "Thank You",
-        "paragraphs": [
-          "Your smile at our reception means the world to us.",
-          "Come as you are — we only ask for your blessings and good company."
-        ]
-      },
-      "familyMessages": {
-        "groom": "We would love your company at our reception evening.",
-        "bride": "Please join us for dinner, laughter, and blessings at the reception."
+        "groom": "Please join us for the wedding and for our post-wedding reception in Eluru.",
+        "bride": "We would be honoured to have you with us for the full celebration."
       }
     }
   },
   "venue": {
-    "label": "Wedding Venue",
-    "name": "Raju Gari Gardens Kalyana Mandapam",
+    "label": "Wedding Venue · 18 December",
+    "name": "Parinaya A/C Function Hall",
     "address": [
-      "Raju Gari Gardens Kalyana Mandapam",
-      "Seethanagaram",
-      "Andhra Pradesh 533287"
+      "Parinaya A/C Function Hall",
+      "NH-16, Z. Raganpeta",
+      "Jaggampeta",
+      "Andhra Pradesh"
     ],
-    "fullAddress": "Raju Gari Gardens Kalyana Mandapam, Seethanagaram, Andhra Pradesh 533287",
-    "mapsUrl": "https://maps.app.goo.gl/NZWfCCQxr7DXunZJ8",
-    "mapsEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3811.857888386047!2d81.6986379!3d17.1771228!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a37097c55013c69%3A0x88bda4f7293864e!2sRaju%20Gari%20Gardens%20kalyana%20mandapam!5e0!3m2!1sen!2sin!4v1784305972628!5m2!1sen!2sin"
+    "fullAddress": "Parinaya A/C Function Hall, NH-16, Z. Raganpeta, Jaggampeta, Andhra Pradesh",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Parinaya+A%2FC+Function+Hall&query_place_id=0x3a37782efa7b5b0f:0x1b71a68460a236ab",
+    "mapsEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4903.939453248353!2d82.04856966980188!3d17.171712775912702!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a37782efa7b5b0f%3A0x1b71a68460a236ab!2sParinaya%20A%2FC%20Function%20Hall!5e1!3m2!1sen!2sin!4v1795424040589!5m2!1sen!2sin"
   },
   "receptionVenue": {
-    "label": "Reception Venue",
-    "name": "Subhamasthu Function Hall",
+    "label": "Post-Wedding Reception · 20 December",
+    "name": "Grand Krishna Kalyana Vedika",
     "address": [
-      "Subhamasthu Function Hall",
-      "beside NH 16",
-      "Neeladriraopeta",
-      "Andhra Pradesh 533435"
+      "Grand Krishna Kalyana Vedika",
+      "Eluru",
+      "Andhra Pradesh",
+      "On behalf of the groom — Chintamaneni Family"
     ],
-    "fullAddress": "Subhamasthu Function Hall, beside NH 16, Neeladriraopeta, Andhra Pradesh 533435",
-    "mapsUrl": "https://maps.app.goo.gl/p7vcNGpCoNY4Ru677",
-    "mapsEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6433.2257396337745!2d82.03474684903135!3d17.170949131049756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a37778773fa79cd%3A0xa56fe47922e7d055!2sNeeladriraopeta!5e0!3m2!1sen!2sin!4v1784306549877!5m2!1sen!2sin"
+    "fullAddress": "Grand Krishna Kalyana Vedika, Eluru, Andhra Pradesh",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Grand+Krishna+Kalyana+Vedika&query_place_id=0x3a36135ec856fbe1:0x9cc4a306b505e291",
+    "mapsEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d600618.7119028604!2d80.73474735792313!3d16.699884212580606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a36135ec856fbe1%3A0x9cc4a306b505e291!2sGrand%20Krishna%20Kalyana%20Vedika!5e1!3m2!1sen!2sin!4v1795434942200!5m2!1sen!2sin"
   },
   "blessings": [
     "|| శ్రీ రస్తు ||",
@@ -189,21 +147,21 @@
     "telugu": "శుభం భవతు"
   },
   "venueInfo": {
-    "directions": "Raju Gari Gardens Kalyana Mandapam is in Seethanagaram, Andhra Pradesh — easily reachable from nearby towns and major roads.",
-    "parking": "Ample parking is available within the mandapam premises for all invited guests.",
-    "accommodation": "Guests travelling from afar may find comfortable stays nearby in Seethanagaram and surrounding towns. Please contact either family for assistance with arrangements.",
-    "travel": "Visakhapatnam Airport is the closest major airport. Local trains and road routes connect comfortably to Seethanagaram."
+    "directions": "Parinaya A/C Function Hall is on NH-16 at Z. Raganpeta, Jaggampeta — easy access from the highway and nearby towns.",
+    "parking": "Parking is available at the function hall for wedding guests.",
+    "accommodation": "Guests travelling from afar may find stays in Jaggampeta and surrounding towns. Please contact either family for assistance.",
+    "travel": "Rajamahendravaram is the nearest major city. NH-16 connects Jaggampeta by road."
   },
   "receptionVenueInfo": {
-    "directions": "Subhamasthu Function Hall is beside NH 16 at Neeladriraopeta, Andhra Pradesh — convenient access from the highway.",
-    "parking": "Parking is available at the function hall for reception guests.",
-    "travel": "Located beside NH 16 for easy road access from nearby towns and cities."
+    "directions": "Grand Krishna Kalyana Vedika, Eluru — evening post-wedding reception on behalf of the groom (Chintamaneni Family).",
+    "parking": "Parking available at the venue for reception guests.",
+    "travel": "Eluru is well connected by NH-16 and road from Rajamahendravaram and Vijayawada."
   },
   "footer": {
     "lead": "With Love & Blessings",
     "families": [
-      "Vuddagiri Family",
-      "Chiravuri Family"
+      "Chintamaneni Family",
+      "Sivakoti Family"
     ],
     "thanksTitle": "Thank You",
     "thanksBody": "We eagerly await your gracious presence and blessings."
@@ -227,7 +185,7 @@
     ],
     "receptionMood": "recep-preview.png"
   },
-  "seal": "K & P",
+  "seal": "R&B",
   "heroIcons": [
     "hero-icons/web/icon1.png?v=3",
     "hero-icons/web/icon2.png?v=3",
@@ -238,7 +196,7 @@
     "hero-icons/web/icon7.png?v=3"
   ],
   "navigation": {
-    "brand": "Kamesh & Prasanna",
+    "brand": "Ruthwik & Balasree",
     "items": [
       {
         "href": "#hero",
@@ -267,32 +225,32 @@
     ]
   },
   "groom": {
-    "fullName": "Mr. Veera Venkata Sathya Kameshwara Rao",
-    "displayName": "Kamesh",
-    "father": "Sri Vuddagiri Subbarao",
-    "mother": "Smt. Venkata Maha Lakshmi",
-    "family": "Vuddagiri Family",
+    "fullName": "Mr. Ruthwik Chowdary",
+    "displayName": "Ruthwik",
+    "father": "Sri Chintamaneni Raghavendra Rao",
+    "mother": "Smt. Ganga Savitri",
+    "family": "Chintamaneni Family",
     "role": "Son of",
     "education": ""
   },
   "bride": {
-    "fullName": "Ms. Lakshmi Prasanna",
-    "displayName": "Prasanna",
-    "father": "Sri Chiravuri Srinivas",
-    "mother": "Smt. Kotamamba (Manju)",
-    "family": "Chiravuri Family",
+    "fullName": "Ms. Balasree Lakshmi Tulasi",
+    "displayName": "Balasree",
+    "father": "Sri Sivakoti Veerraju",
+    "mother": "Smt. Sitaratnam",
+    "family": "Sivakoti Family",
     "role": "Daughter of",
     "education": ""
   },
   "celebrations": [
     {
-      "title": "Wedding Ceremony",
-      "date": "30 August 2026",
-      "day": "Sunday",
-      "time": "Muhurtham 11:29 PM",
-      "description": "Sacred Telugu wedding rites, mangalasutram, and blessings. We request the honour of your presence.",
-      "location": "Raju Gari Gardens Kalyana Mandapam, Seethanagaram, Andhra Pradesh 533287",
-      "mapsUrl": "https://maps.app.goo.gl/NZWfCCQxr7DXunZJ8",
+      "title": "Wedding & Reception",
+      "date": "18 December 2026",
+      "day": "Friday",
+      "time": "Evening reception · Muhurtham 03:18 AM",
+      "description": "One continuous celebration — evening reception and dinner, sacred wedding rituals through the night, and Shubha Muhurtham at 03:18 AM.",
+      "location": "Parinaya A/C Function Hall, NH-16, Z. Raganpeta, Jaggampeta, Andhra Pradesh",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Parinaya+A%2FC+Function+Hall&query_place_id=0x3a37782efa7b5b0f:0x1b71a68460a236ab",
       "highlight": true,
       "icon": "ॐ",
       "invite": [
@@ -300,50 +258,43 @@
       ]
     },
     {
-      "title": "Reception",
-      "date": "02 September 2026",
-      "day": "Wednesday",
+      "title": "Post-Wedding Reception",
+      "date": "20 December 2026",
+      "day": "Sunday",
       "time": "07:00 PM onwards",
-      "description": "Dinner, music, and heartfelt wishes with family and friends. Come celebrate the newlyweds.",
-      "location": "Subhamasthu Function Hall, beside NH 16, Neeladriraopeta, Andhra Pradesh 533435",
-      "mapsUrl": "https://maps.app.goo.gl/p7vcNGpCoNY4Ru677",
+      "description": "An evening reception at Grand Krishna Kalyana Vedika, Eluru — hosted on behalf of the groom by the Chintamaneni family.",
+      "location": "Grand Krishna Kalyana Vedika, Eluru, Andhra Pradesh",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Grand+Krishna+Kalyana+Vedika&query_place_id=0x3a36135ec856fbe1:0x9cc4a306b505e291",
       "highlight": false,
       "icon": "✧",
       "invite": [
-        "full",
-        "reception"
+        "full"
       ]
     }
   ],
   "timeline": [
     {
-      "time": "05:00 PM",
-      "title": "Panakala Kavidi Ceremony",
-      "description": "Bride and groom Panakala Kavidi ceremony.",
-      "icon": "✧"
-    },
-    {
-      "time": "06:00 PM",
-      "title": "Bride & Groom Entrance",
-      "description": "The ceremonial entrance of the bride and groom.",
-      "icon": "♫"
-    },
-    {
       "time": "07:00 PM",
-      "title": "Groom Upanayanam Ceremony",
-      "description": "Sacred Upanayanam ceremony for the groom.",
-      "icon": "ॐ"
+      "title": "Evening Reception",
+      "description": "Welcome, blessings, and time with Ruthwik, Balasree, and both families.",
+      "icon": "✧"
     },
     {
       "time": "08:00 PM",
       "title": "Dinner",
-      "description": "Join us for a traditional wedding feast.",
+      "description": "Traditional wedding feast together before the ceremonies.",
       "icon": "❀"
     },
     {
-      "time": "11:29 PM",
+      "time": "10:00 PM",
+      "title": "Wedding rituals begin",
+      "description": "Sacred rites lead through the night toward the muhurtham.",
+      "icon": "♫"
+    },
+    {
+      "time": "03:18 AM",
       "title": "Shubha Muhurtham",
-      "description": "Mangala Sutra Dharana — the auspicious wedding muhurtham.",
+      "description": "Mangala Sutra Dharana — the auspicious wedding muhurtham (early hours).",
       "highlight": true,
       "icon": "ॐ"
     }
@@ -351,62 +302,62 @@
   "receptionTimeline": [
     {
       "time": "07:00 PM",
-      "title": "You arrive",
-      "description": "Walk in, say hello, and settle in. We’re so glad you’re here.",
+      "title": "Welcome",
+      "description": "Arrive and receive a warm welcome from the Chintamaneni family.",
       "icon": "❀"
     },
     {
       "time": "07:30 PM",
-      "title": "Meet the couple",
-      "description": "A warm welcome from Kamesh and Prasanna — hugs, photos, and good wishes.",
+      "title": "Meet Ruthwik & Balasree",
+      "description": "Greet the newlyweds, photos, and good wishes.",
       "highlight": true,
       "icon": "✧"
     },
     {
       "time": "08:00 PM",
-      "title": "Dinner & chat",
-      "description": "Good food, easy conversation, and music in the background.",
+      "title": "Dinner",
+      "description": "Celebrate with dinner and easy conversation.",
       "icon": "♫"
     },
     {
       "time": "09:30 PM",
       "title": "Thank you",
-      "description": "We’ll wrap up with gratitude. Thank you for celebrating with our families.",
+      "description": "Evening closes with gratitude for your blessings.",
       "icon": "❀"
     }
   ],
   "familyInvites": [
     {
       "side": "Groom's Parents",
-      "names": "Sri Vuddagiri Subbarao & Smt. Venkata Maha Lakshmi",
+      "names": "Sri Chintamaneni Raghavendra Rao & Smt. Ganga Savitri",
       "message": "We invite you to join us in celebrating this joyous occasion.",
-      "family": "Vuddagiri Family",
+      "family": "Chintamaneni Family",
       "image": "images/family-groom.jpg?v=2"
     },
     {
       "side": "Bride's Parents",
-      "names": "Sri Chiravuri Srinivas & Smt. Kotamamba (Manju)",
+      "names": "Sri Sivakoti Veerraju & Smt. Sitaratnam",
       "message": "We look forward to sharing this special day with you.",
-      "family": "Chiravuri Family",
+      "family": "Sivakoti Family",
       "image": "images/family-bride.jpg?v=2"
     }
   ],
   "contacts": {
     "brideSide": {
       "label": "Bride Side",
-      "name": "Chiravuri Family",
-      "phone": "+91 99635 94960",
-      "phoneHref": "tel:+919963594960",
-      "whatsapp": "https://wa.me/919963594960",
-      "location": "Seethanagaram"
+      "name": "Sivakoti Family",
+      "phone": "+91 98663 05853",
+      "phoneHref": "tel:+919866305853",
+      "whatsapp": "https://wa.me/919866305853",
+      "location": "Katravulapalli"
     },
     "groomSide": {
       "label": "Groom Side",
-      "name": "Vuddagiri Family",
-      "phone": "+91 98482 23112",
-      "phoneHref": "tel:+919848223112",
-      "whatsapp": "https://wa.me/919848223112",
-      "location": "Jaggampeta"
+      "name": "Chintamaneni Family",
+      "phone": "+91 99895 77374",
+      "phoneHref": "tel:+919989577374",
+      "whatsapp": "https://wa.me/919989577374",
+      "location": "Jalipudi, Eluru"
     }
   }
 }

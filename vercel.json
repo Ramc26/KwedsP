@@ -3,9 +3,14 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/i/e4p8n1",
+      "destination": "/i/w7k2m9",
+      "permanent": false
+    },
+    {
       "source": "/",
       "has": [{ "type": "query", "key": "c", "value": "e4p8n1" }],
-      "destination": "/i/e4p8n1",
+      "destination": "/i/w7k2m9",
       "permanent": false
     },
     {
@@ -17,7 +22,7 @@
   ],
   "rewrites": [
     { "source": "/i/w7k2m9", "destination": "/index.html" },
-    { "source": "/i/e4p8n1", "destination": "/reception.html" }
+    { "source": "/i/e4p8n1", "destination": "/index.html" }
   ],
   "headers": [
     {

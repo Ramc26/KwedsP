@@ -75,6 +75,17 @@ $(function () {
       if (full) return { code: full, type: "full" };
     }
 
+    var host = String(window.location.hostname || "").toLowerCase();
+    var localDev =
+      host === "localhost" || host === "127.0.0.1" || host === "[::1]" || host === "::1";
+    var forceLock = new URLSearchParams(window.location.search).get("lock") === "1";
+    if (localDev && !forceLock) {
+      var devFull = Object.keys(codes).find(function (k) {
+        return codes[k] === "full";
+      });
+      if (devFull) return { code: devFull, type: "full" };
+    }
+
     return { code: null, type: null };
   }
 
@@ -125,6 +136,9 @@ $(function () {
     if (mode.venuesSummary) d.venuesSummary = mode.venuesSummary;
     if (mode.venuesPanelLead) d.venuesPanelLead = mode.venuesPanelLead;
     if (mode.timelineTitle) d.timelineTitle = mode.timelineTitle;
+    if (mode.receptionTimelineTitle) {
+      d.receptionTimelineTitle = mode.receptionTimelineTitle;
+    }
     if (mode.whenKicker) d.whenKicker = mode.whenKicker;
     if (mode.whenTitle) d.whenTitle = mode.whenTitle;
     if (mode.gateBtn) d.gateBtn = mode.gateBtn;
@@ -142,6 +156,13 @@ $(function () {
       d.images.hero = mode.heroImage;
     }
     d.showWeddingVenue = mode.showWeddingVenue !== false;
+    if (mode.showReceptionVenue !== undefined) {
+      d.showReceptionVenue = mode.showReceptionVenue;
+    } else if (raw.showReceptionVenue !== undefined) {
+      d.showReceptionVenue = raw.showReceptionVenue;
+    } else {
+      d.showReceptionVenue = true;
+    }
     d.showTimeline = mode.showTimeline !== false;
     d.calendarTitleSuffix = mode.calendarTitleSuffix || d.brand;
     d.calendarLocationKey = mode.calendarLocationKey || "venue";
@@ -291,15 +312,20 @@ $(function () {
       $("#timelineTitle").text(d.timelineTitle);
     }
     $("#weddingVenueCard").toggle(!!d.showWeddingVenue);
+    $("#receptionVenueCard").toggle(!!d.showReceptionVenue);
     $("#timelineWrap").toggle(!!d.showTimeline && !!(d.timeline && d.timeline.length));
 
     var showReceptionFlow =
       inviteType === "full" &&
       !!(d.receptionTimeline && d.receptionTimeline.length);
     $("#receptionTimelineTitle").text(
-      (d.inviteModes &&
-        d.inviteModes.reception &&
-        d.inviteModes.reception.timelineTitle) ||
+      d.receptionTimelineTitle ||
+        (d.inviteModes &&
+          d.inviteModes.reception &&
+          d.inviteModes.reception.timelineTitle) ||
+        (d.inviteModes &&
+          d.inviteModes.full &&
+          d.inviteModes.full.receptionTimelineTitle) ||
         "Reception Flow"
     );
     $("#receptionTimelineWrap").prop("hidden", !showReceptionFlow);

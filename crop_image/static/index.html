@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crop & Compress Studio</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cropperjs@1.6.2/dist/cropper.min.css">
+  <link rel="stylesheet" href="/static/app.css?v=4">
+</head>
+<body>
+  <header class="top">
+    <div class="top-inner">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">◈</span>
+        <div>
+          <h1>Crop &amp; Compress</h1>
+          <p>Crop each image → save to draft → download all with your names</p>
+        </div>
+      </div>
+      <div class="top-stats" id="topStats" hidden>
+        <span id="statCount">0 files</span>
+        <span class="dot">·</span>
+        <span id="draftStat">0 drafts</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="layout">
+  <aside class="panel">
+    <section class="card">
+      <h2>1 · Load images</h2>
+      <label class="drop" id="dropZone" for="fileInput">
+        <input type="file" id="fileInput" accept="image/*" multiple hidden>
+        <span class="drop-title">Drop images here</span>
+        <span class="drop-hint">or click to choose — JPEG, PNG, WebP, HEIC*</span>
+      </label>
+      <ul class="file-list" id="fileList"></ul>
+    </section>
+
+    <section class="card">
+      <h2>2 · Crop settings</h2>
+      <label class="field">
+        <span>Aspect ratio</span>
+        <select id="aspect">
+          <option value="free">Free</option>
+          <option value="4:5">4:5 portrait (tall)</option>
+          <option value="3:4">3:4 portrait</option>
+          <option value="1:1">1:1 square</option>
+          <option value="16:9">16:9 wide / hero</option>
+          <option value="4:3">4:3 landscape</option>
+        </select>
+      </label>
+    </section>
+
+    <section class="card">
+      <h2>3 · Drafts (work through each)</h2>
+      <p class="hint">Crop in the editor → name the file → <strong>Save draft</strong>. Repeat for each photo. Download when done.</p>
+      <label class="field">
+        <span>Name preset</span>
+        <select id="namePreset">
+          <option value="">— pick or type below —</option>
+          <option value="hero.jpg">hero.jpg</option>
+          <option value="groom.jpg">groom.jpg</option>
+          <option value="bride.jpg">bride.jpg</option>
+          <option value="family-groom.jpg">family-groom.jpg</option>
+          <option value="family-bride.jpg">family-bride.jpg</option>
+          <option value="gallery-1.jpeg">gallery-1.jpeg</option>
+          <option value="gallery-2.jpeg">gallery-2.jpeg</option>
+          <option value="gallery-3.jpeg">gallery-3.jpeg</option>
+          <option value="gallery-4.jpeg">gallery-4.jpeg</option>
+          <option value="gallery-5.jpeg">gallery-5.jpeg</option>
+          <option value="venue-wed.png">venue-wed.png (use PNG format)</option>
+          <option value="venue-recp.png">venue-recp.png</option>
+        </select>
+      </label>
+      <label class="field">
+        <span>Save as (filename)</span>
+        <input type="text" id="draftName" placeholder="e.g. hero.jpg" autocomplete="off">
+      </label>
+      <label class="field">
+        <span>Format for this image</span>
+        <select id="draftFormat">
+          <option value="JPEG">JPEG</option>
+          <option value="WEBP">WebP</option>
+          <option value="PNG">PNG</option>
+        </select>
+      </label>
+      <label class="field">
+        <span>Max size (MB)</span>
+        <input type="range" id="maxMb" min="0.3" max="10" step="0.1" value="5">
+        <output id="maxMbOut">5.0 MB</output>
+      </label>
+      <label class="field">
+        <span>Max long edge (px, 0 = auto)</span>
+        <input type="number" id="maxEdge" min="0" step="100" value="0">
+      </label>
+      <div class="draft-actions">
+        <button type="button" class="btn primary" id="btnSaveDraft" disabled>Save draft</button>
+        <button type="button" class="btn subtle" id="btnNext" disabled>Next image →</button>
+      </div>
+      <label class="check">
+        <input type="checkbox" id="autoNext" checked>
+        Go to next image after save
+      </label>
+      <p class="draft-progress" id="draftProgress">0 of 0 saved to draft</p>
+      <ul class="draft-list" id="draftList"></ul>
+      <button type="button" class="btn primary" id="btnDraftZip" disabled>Download all drafts (ZIP)</button>
+      <button type="button" class="btn subtle" id="btnClearDrafts" disabled>Clear drafts</button>
+    </section>
+
+    <section class="card actions">
+      <h2>Quick batch (same crop)</h2>
+      <label class="field">
+        <span>Batch format</span>
+        <select id="format">
+          <option value="JPEG">JPEG</option>
+          <option value="WEBP">WebP</option>
+          <option value="PNG">PNG</option>
+        </select>
+      </label>
+      <label class="check">
+        <input type="checkbox" id="useEditorCrop" checked>
+        Use current editor frame on every image
+      </label>
+      <button type="button" class="btn" id="btnBatch" disabled>Optimize all (no draft)</button>
+    </section>
+  </aside>
+
+  <section class="workspace">
+    <div class="card editor-card" id="editorCard" hidden>
+      <div class="editor-head">
+        <h2>Editor</h2>
+        <select id="editorPick" title="Which image"></select>
+      </div>
+      <div class="tool-bar" role="toolbar" aria-label="Crop tools">
+        <button type="button" class="tool-btn is-active" id="toolCrop" title="Move crop frame (C)">Crop frame</button>
+        <button type="button" class="tool-btn" id="toolPan" title="Pan image — drag to reposition (H or Space)">✋ Pan</button>
+        <button type="button" class="tool-btn" id="toolZoomIn" title="Zoom in">+</button>
+        <button type="button" class="tool-btn" id="toolZoomOut" title="Zoom out">−</button>
+        <button type="button" class="tool-btn" id="toolReset" title="Reset view">Reset</button>
+      </div>
+      <p class="tool-hint">Scroll to zoom · <strong>Pan</strong> or hold <kbd>Space</kbd> and drag to move the image inside the frame</p>
+      <div class="crop-wrap">
+        <img id="cropImage" alt="Crop preview">
+      </div>
+      <div class="editor-actions">
+        <button type="button" class="btn" id="btnCropDl">Download this crop only</button>
+      </div>
+    </div>
+    <div class="card empty" id="emptyState">
+      <p>Load images, then crop and save each one to <strong>draft</strong> before downloading the ZIP.</p>
+    </div>
+  </section>
+  </main>
+
+  <div class="toast" id="toast" role="status" hidden></div>
+  <div class="busy" id="busy" hidden>
+    <div class="spinner"></div>
+    <p>Processing…</p>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/cropperjs@1.6.2/dist/cropper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+  <script src="/static/app.js?v=5"></script>
+</body>
+</html>
