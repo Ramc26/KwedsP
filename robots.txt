@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://kwedsp.rambuilds.in/sitemap.xml
+Sitemap: https://kwedsp.vercel.app/sitemap.xml

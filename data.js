@@ -1,5 +1,5 @@
 window.WEDDING_DATA = {
-  "siteUrl": "https://kwedsp.rambuilds.in",
+  "siteUrl": "https://kwedsp.vercel.app",
   "meta": {
     "tabTitle": "R♥B",
     "shareHeadline": "Ruthwik & Balasree — Wedding & Reception",
