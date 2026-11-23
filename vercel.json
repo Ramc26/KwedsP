@@ -3,6 +3,11 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/",
+      "destination": "/i/w7k2m9",
+      "permanent": false
+    },
+    {
       "source": "/i/e4p8n1",
       "destination": "/i/w7k2m9",
       "permanent": false
