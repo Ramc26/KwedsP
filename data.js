@@ -361,3 +361,4 @@ window.__KWEDS_DATA__ = {
     }
   }
 };
+window.WEDDING_DATA = window.__KWEDS_DATA__;

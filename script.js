@@ -987,10 +987,11 @@ $(function () {
   initNavBehavior();
   initImageLightbox();
 
-  if (window.WEDDING_DATA) {
-    renderAll(window.WEDDING_DATA);
+  var embeddedData = window.__KWEDS_DATA__ || window.WEDDING_DATA;
+  if (embeddedData) {
+    renderAll(embeddedData);
   } else {
-    $.getJSON("data.json")
+    $.getJSON(assetUrl("data.json"))
       .done(renderAll)
       .fail(function () {
         $(".gate-greeting").text("Could not load invitation data. Please refresh.");

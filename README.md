@@ -22,9 +22,9 @@ python3 -c "
 import json
 with open('data.json') as f: d=json.load(f)
 with open('data.js','w') as f:
-    f.write('window.WEDDING_DATA = ')
+    f.write('window.__KWEDS_DATA__ = ')
     json.dump(d,f,ensure_ascii=False,indent=2)
-    f.write(';\n')
+    f.write(';\nwindow.WEDDING_DATA = window.__KWEDS_DATA__;\n')
 "
 ```
 
