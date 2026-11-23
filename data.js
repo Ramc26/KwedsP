@@ -1,4 +1,4 @@
-window.WEDDING_DATA = {
+window.__KWEDS_DATA__ = {
   "siteUrl": "https://kwedsp.vercel.app",
   "meta": {
     "tabTitle": "R♥B",
@@ -24,11 +24,11 @@ window.WEDDING_DATA = {
     "Andhra Pradesh",
     "Wedding Invitation"
   ],
-  "datetime": "2026-12-19T03:18:00+05:30",
+  "datetime": "2026-12-19T03:16:00+05:30",
   "dateLabel": "18 December 2026",
   "dayLabel": "Friday",
-  "muhurtham": "Evening reception · Muhurtham 03:18 AM",
-  "venuesSummary": "18 Dec — Jaggampeta · 20 Dec evening — post-wedding reception, Eluru",
+  "muhurtham": "Reception 6 PM · Dinner 7 PM · Muhurtham 03:16 AM (19 Dec)",
+  "venuesSummary": "18 Dec — Jaggampeta · 20 Dec 11 AM — post-wedding reception, lunch 12 PM, Eluru",
   "showReceptionVenue": true,
   "receptionTimelineTitle": "Post-Wedding Reception · Eluru",
   "inviteModes": {
@@ -45,10 +45,10 @@ window.WEDDING_DATA = {
       },
       "description": "Join Ruthwik and Balasree for the wedding at Jaggampeta and a post-wedding reception in Eluru on behalf of the groom's family.",
       "brand": "",
-      "datetime": "2026-12-19T03:18:00+05:30",
+      "datetime": "2026-12-19T03:16:00+05:30",
       "dateLabel": "18 December 2026",
-      "muhurtham": "Evening reception · Muhurtham 03:18 AM",
-      "venuesSummary": "18 Dec — Jaggampeta · 20 Dec evening — post-wedding reception, Eluru",
+      "muhurtham": "Reception 6 PM · Dinner 7 PM · Muhurtham 03:16 AM (19 Dec)",
+      "venuesSummary": "18 Dec — Jaggampeta · 20 Dec 11 AM — post-wedding reception, lunch 12 PM, Eluru",
       "whenKicker": "Celebrations",
       "whenTitle": "When & Where",
       "timelineTitle": "Celebration Flow · 18 December",
@@ -153,7 +153,7 @@ window.WEDDING_DATA = {
     "travel": "Rajamahendravaram is the nearest major city. NH-16 connects Jaggampeta by road."
   },
   "receptionVenueInfo": {
-    "directions": "Grand Krishna Kalyana Vedika, Eluru — evening post-wedding reception on behalf of the groom (Chintamaneni Family).",
+    "directions": "Grand Krishna Kalyana Vedika, Eluru — post-wedding reception from 11 AM, lunch at 12 PM, on behalf of the groom (Chintamaneni Family).",
     "parking": "Parking available at the venue for reception guests.",
     "travel": "Eluru is well connected by NH-16 and road from Rajamahendravaram and Vijayawada."
   },
@@ -247,8 +247,8 @@ window.WEDDING_DATA = {
       "title": "Wedding & Reception",
       "date": "18 December 2026",
       "day": "Friday",
-      "time": "Evening reception · Muhurtham 03:18 AM",
-      "description": "One continuous celebration — evening reception and dinner, sacred wedding rituals through the night, and Shubha Muhurtham at 03:18 AM.",
+      "time": "6:00 PM reception · 7:00 PM dinner · Muhurtham 03:16 AM (19 Dec)",
+      "description": "One continuous celebration — reception at 6 PM, dinner at 7 PM, sacred wedding rituals through the night, and Shubha Muhurtham at 03:16 AM on 19 December.",
       "location": "Parinaya A/C Function Hall, NH-16, Z. Raganpeta, Jaggampeta, Andhra Pradesh",
       "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Parinaya+A%2FC+Function+Hall&query_place_id=0x3a37782efa7b5b0f:0x1b71a68460a236ab",
       "highlight": true,
@@ -261,8 +261,8 @@ window.WEDDING_DATA = {
       "title": "Post-Wedding Reception",
       "date": "20 December 2026",
       "day": "Sunday",
-      "time": "07:00 PM onwards",
-      "description": "An evening reception at Grand Krishna Kalyana Vedika, Eluru — hosted on behalf of the groom by the Chintamaneni family.",
+      "time": "11:00 AM reception · 12:00 PM lunch",
+      "description": "Post-wedding reception at Grand Krishna Kalyana Vedika, Eluru from 11 AM, with lunch at 12 PM — hosted on behalf of the groom by the Chintamaneni family.",
       "location": "Grand Krishna Kalyana Vedika, Eluru, Andhra Pradesh",
       "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Grand+Krishna+Kalyana+Vedika&query_place_id=0x3a36135ec856fbe1:0x9cc4a306b505e291",
       "highlight": false,
@@ -274,13 +274,13 @@ window.WEDDING_DATA = {
   ],
   "timeline": [
     {
-      "time": "07:00 PM",
-      "title": "Evening Reception",
+      "time": "06:00 PM",
+      "title": "Reception",
       "description": "Welcome, blessings, and time with Ruthwik, Balasree, and both families.",
       "icon": "✧"
     },
     {
-      "time": "08:00 PM",
+      "time": "07:00 PM",
       "title": "Dinner",
       "description": "Traditional wedding feast together before the ceremonies.",
       "icon": "❀"
@@ -292,37 +292,37 @@ window.WEDDING_DATA = {
       "icon": "♫"
     },
     {
-      "time": "03:18 AM",
+      "time": "03:16 AM · 19 Dec",
       "title": "Shubha Muhurtham",
-      "description": "Mangala Sutra Dharana — the auspicious wedding muhurtham (early hours).",
+      "description": "Mangala Sutra Dharana — the auspicious wedding muhurtham in the early hours of 19 December.",
       "highlight": true,
       "icon": "ॐ"
     }
   ],
   "receptionTimeline": [
     {
-      "time": "07:00 PM",
-      "title": "Welcome",
-      "description": "Arrive and receive a warm welcome from the Chintamaneni family.",
+      "time": "11:00 AM",
+      "title": "Reception",
+      "description": "Post-wedding reception begins — warm welcome from the Chintamaneni family.",
       "icon": "❀"
     },
     {
-      "time": "07:30 PM",
+      "time": "11:30 AM",
       "title": "Meet Ruthwik & Balasree",
       "description": "Greet the newlyweds, photos, and good wishes.",
       "highlight": true,
       "icon": "✧"
     },
     {
-      "time": "08:00 PM",
-      "title": "Dinner",
-      "description": "Celebrate with dinner and easy conversation.",
+      "time": "12:00 PM",
+      "title": "Lunch",
+      "description": "Lunch is served for all guests.",
       "icon": "♫"
     },
     {
-      "time": "09:30 PM",
+      "time": "01:30 PM",
       "title": "Thank you",
-      "description": "Evening closes with gratitude for your blessings.",
+      "description": "The morning closes with gratitude for your blessings.",
       "icon": "❀"
     }
   ],

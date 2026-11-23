@@ -184,11 +184,11 @@
   }
 
   function init() {
-    initFlowerStream();
+    /* Petal shower disabled — keep API for compatibility */
   }
 
   window.KwedsInteractive = {
     init: init,
-    playRosePetals: playRosePetals
+    playRosePetals: function () {}
   };
 })(window);

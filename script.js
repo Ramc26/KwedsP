@@ -494,7 +494,13 @@ $(function () {
     var $grid = $("#familyGrid").empty();
     (d.familyInvites || []).forEach(function (f) {
       var photo = f.image
-        ? '<div class="family-photo" style="background-image:' + cssUrl(f.image) + '"></div>'
+        ? '<button type="button" class="family-photo is-lightbox" style="background-image:' +
+          cssUrl(f.image) +
+          '" data-full-src="' +
+          assetUrl(f.image) +
+          '" aria-label="View full ' +
+          (f.side || "family") +
+          ' photo"></button>'
         : "";
       $grid.append(
         '<article class="family-item reveal">' +
@@ -682,9 +688,13 @@ $(function () {
       $img.attr("src", "").attr("alt", "");
     }
 
-    $(document).on("click", ".venue-card-photo.is-lightbox", function () {
+    $(document).on("click", ".venue-card-photo.is-lightbox, .family-photo.is-lightbox", function () {
       var src = $(this).attr("data-full-src");
-      openLightbox(src, $(this).attr("aria-label") || "Venue photo");
+      if (!src && $(this).css("background-image")) {
+        var m = $(this).css("background-image").match(/url\(["']?(.+?)["']?\)/);
+        if (m) src = m[1];
+      }
+      openLightbox(src, $(this).attr("aria-label") || "Photo");
     });
 
     $("#imageLightboxClose").on("click", closeLightbox);
@@ -783,10 +793,6 @@ $(function () {
     buildGlitter();
     $("#heroGlitter").addClass("is-on");
     $("#heroEmblem").addClass("is-in");
-
-    if (window.KwedsInteractive && window.KwedsInteractive.playRosePetals) {
-      window.KwedsInteractive.playRosePetals();
-    }
 
     setTimeout(function () {
       $(".hero-brand").addClass("is-in");
